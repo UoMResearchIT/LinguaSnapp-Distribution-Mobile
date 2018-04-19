@@ -1,0 +1,733 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="css/jquery.mobile-1.4.5.css" type="text/css" rel="stylesheet" />
+    <link href="css/linguasnapp.css" rel="stylesheet" type="text/css" />
+
+    <script src="phonegap.js"></script>
+
+
+    <script src="lib/jquery-2.1.3.min.js"></script>
+    <script src="lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="lib/jquery.validate.min.js"></script>
+    <script src="lib/additional-methods.min.js"></script>
+    <script src="scripts/utils/phonegap-utils.js"></script>
+    <script src="scripts/data/config.js"></script>
+    <script src="scripts/data/populateDB.js"></script>
+    <script src="scripts/data/photo-record-data.js"></script>
+    <script src="scripts/data/descriptor-data.js"></script>
+    <script src="scripts/business/register.js"></script>
+    <script src="scripts/business/login.js"></script>
+    <script src="scripts/business/descriptor.js"></script>
+    <script src="scripts/business/photo-record.js"></script>
+    <script src="scripts/presentation/register-presentation.js"></script>
+    <script src="scripts/presentation/login-presentation.js"></script>
+    <script src="scripts/presentation/home-presentation.js"></script>
+    <script src="scripts/presentation/photo2-presentation.js"></script>
+    <script src="scripts/presentation/photo3-presentation.js"></script>
+    <script src="scripts/presentation/photo1-presentation.js"></script>
+    
+    <script src="scripts/presentation/pending-presentation.js"></script>
+    <script src="scripts/business/upload.js"></script>
+    
+    <script src="scripts/main.js"></script>
+
+
+
+</head>
+<body>
+
+    <div class="ui-loader-background"> </div>
+
+    <!-- Blank launch page -->
+    <div data-role="page" id="launch">
+
+        <div data-role="header" data-position="fixed" data-fullscreen="false" class="linguaheader">
+
+            <img src="images/linguasnapplogopurple.png" alt="LinguaSnapp logo" class="toplogo" />
+        </div>
+        <!-- /header -->
+
+        <div data-role="ui-content" >
+
+            <div class="ui-body ui-body-a ui-corner-all initialisingDiv" >
+                <div class="loadingDiv">
+                    Initialising
+                </div>
+            </div>
+
+        </div>
+        <!-- /content -->
+
+
+        <div data-role="footer" data-position="fixed" data-fullscreen="false" class="linguafooter">
+
+            <h4>LinguaSnapp</h4>
+             <input type="hidden" value="yes" id="mobile" />
+            <input type="hidden" value="yes" id="rebuild" />
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+
+    <!-- Main menu page -->
+    <div data-role="page" id="main">
+
+        <div data-role="header" data-position="fixed" data-fullscreen="false" class="linguaheader" >
+
+            <img src="images/linguasnapplogopurple.png" alt="LinguaSnapp logo" class="toplogo" />
+        </div>
+        <!-- /header -->
+
+        <div data-role="ui-content">
+            <ul data-role="listview" data-inset="true" data-filter="false">
+                <li><a href="#" id="lnkTakePhoto">Take Photo</a></li>
+                <li><a href="#" id="lnkShowPending">Show Pending Uploads</a></li>
+                <li><a href="#" id="lnkUploadPending">Upload All Pending Photos</a></li>
+                <li><a href="#about">About LinguaSnapp</a></li>
+            </ul>
+
+
+        </div>
+        <!-- /content -->
+
+
+        <div data-role="footer" data-position="fixed" data-fullscreen="false" class="linguafooter">
+
+            <h4>LinguaSnapp</h4>
+           
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+
+
+    <!-- About page -->
+    <div data-role="page" id="about">
+
+        <div data-role="header" data-position="fixed" data-fullscreen="false" class="navheader">
+            <a href="#main" id="aboutBack" class="ui-btn ui-btn-inline ui-icon-carat-l ui-btn-icon-left">Back</a>
+            <br />
+           
+        </div>
+        <!-- /header -->
+
+        <div data-role="ui-content">
+            <div class="ui-body ui-body-a ui-corner-all unilogodiv">
+             <img src="images/linguasnapplogopurple.png" alt="LinguaSnapp logo" class="lingualogo" />
+               </div>
+            <div class="ui-body ui-body-a ui-corner-all">
+                <p>LinguaSnapp is a project to develop a multilingual landscape map of Manchester, UK. We are trying to find the hotspots where
+                    more than one language is in common use, and what those languages are. This app will help us discover this information, by asking you,
+                    when walking down the street, to report any sign, poster, leaflet or other text that is written in more than one language. We are interested
+                    in towns and cities from outside Manchester too, in fact anywhere in the world!
+                </p>
+                <p>Using the LinguaSnapp app is simple. On the main screen simply press the <strong>Take Photo</strong> button when you see the item of interest,
+                    and your device's camera will launch. Once you have taken the photo the app will also record your present coordinates, so we can see exactly where
+                    it is located. You will also be asked to input some optional information about the language, location, and of course your translation into English if you know it!
+                    Press the <strong>Upload</strong> button when you are ready, and the photo will be transferred to our servers for examination by the project team. The photo
+                    will be deleted from your device once it is uploaded. You can save the photo for later upload too, or delete it. If you submit a photo to LinguaSnapp then you
+                    acknowledge our right to publish that image on our website.
+                </p>
+                <p>Another option on the main screen is <strong>Show Pending Uploads</strong>, which lists any photos you have not yet uploaded. You can use this screen to go back into the photo record
+                    to edit any of the language or location information that you were not able to enter at the time. The <strong>Upload All Pending Photos</strong> option will send every photo
+                    that LinguaSnapp has taken and is still on your device to our servers.
+                </p>
+                <p>
+                    When you upload your photo, it will be sent to our project team for moderation, then published on the LinguaSnapp map. You can see your photo and the photos that others have uploaded 
+                    on the map here: <a href="#" onclick="window.open('http://www.linguasnapp.manchester.ac.uk', '_system')">www.linguasnapp.manchester.ac.uk</a>.
+                </p>
+                <p>
+                    On registering you will be prompted for your email address. This is optional, just used to identify you internally, and allow you to opt-in to our mailing list if you wish. 
+                    Your details will not be passed on to anybody else.
+                </p>
+            </div>
+            <div class="ui-body ui-body-a ui-corner-all">
+                <p>LinguaSnapp is developed and supported by The University of Manchester. </p>
+
+                <div class="unilogodiv">
+                    <img src="images/manchesteruni_purple.png" alt="University of Manchester logo" class="unilogo" />
+                </div>
+            </div>
+
+        </div>
+        <!-- /content -->
+
+
+        <div data-role="footer" data-position="fixed" data-fullscreen="false" >
+            
+
+
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+    <!-- Registration page -->
+    <div data-role="page" id="register">
+
+        <div data-role="header" data-position="fixed" data-fullscreen="false" class="linguaheader">
+
+            <img src="images/linguasnapplogopurple.png" alt="LinguaSnapp logo" class="toplogo" />
+        </div>
+        <!-- /header -->
+
+        <div data-role="ui-content">
+            <form id="frmRegister"  >
+                <div class="ui-body ui-body-a ui-corner-all">
+
+                    <p>Please register with the LinguaSnapp server, or <a href="#login">log in</a> if you have already registered.</p> 
+                    <label for="txtUsercode">Choose a usercode (min 5 chars):</label>
+                    <input type="text" name="txtUsercode" id="txtUsercode" value="" data-clear-btn="true" maxlength="20"  required />
+                    <label for="txtPassword">Password (min 5 chars):</label>
+                    <input type="password" name="txtPassword" id="txtPassword" value="" data-clear-btn="true" maxlength="20"  required />
+                    <label for="txtConfirm">Confirm password:</label>
+                    <input type="password" name="txtConfirm" id="txtConfirm" value="" data-clear-btn="true" maxlength="20" required />
+               </div>
+                <div class="ui-body ui-body-a ui-corner-all">
+
+
+                    <p>Your email address is optional and can be used by you to identify yourself, should you wish to. It will not be shared with others 
+                        and will also allow you to receive messages on our mailing list if you want them. 
+                        If you are a University of Manchester student and have been asked to use this app as part of your course unit then please enter your university email address 
+                        to allow us to identify you for your group work.</p>
+                    <label for="emailAddress">Your Email Address:</label>
+                    <input type="email" name="emailAddress" id="emailAddress" value="" data-clear-btn="true" />
+                  
+
+                    <fieldset data-role="controlgroup" data-type="horizontal" class="fullWidth">
+                        <legend>Join our mailing list?</legend>
+                        <input type="radio" name="mailingList" id="mailingList-1" value="yes" />
+                        <label for="mailingList-1">Yes</label>
+
+                        <input type="radio" name="mailingList" id="mailingList-2" value="no" checked="checked" />
+                        <label for="mailingList-2">No</label>
+                    </fieldset>
+                </div>
+                <div class="ui-body ui-body-a ui-corner-all">
+                    <ul data-role="listview" data-inset="true">
+                        <li><a href="#about">About LinguaSnapp</a></li>
+
+                    </ul>
+                    <input type="button" value="Register" id="btnRegister" />
+
+
+                </div>
+            </form>
+
+        </div>
+        <!-- /content -->
+
+
+        <div data-role="footer" data-position="fixed" data-fullscreen="false" class="linguafooter">
+            <h4>LinguaSnapp</h4>
+
+
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+     <!-- Login page -->
+    <div data-role="page" id="login">
+
+        <div data-role="header" data-position="fixed" data-fullscreen="false" class="linguaheader">
+
+            <img src="images/linguasnapplogopurple.png" alt="LinguaSnapp logo" class="toplogo" />
+        </div>
+        <!-- /header -->
+
+        <div data-role="ui-content">
+            <form id="frmLogin"  >
+                <div class="ui-body ui-body-a ui-corner-all">
+
+                    <p>Please log into the LinguaSnapp server, or <a href="#register">register</a> if you do not have or can't remember your password.</p> 
+                    <label for="txtUsercode">Usercode (min 5 chars):</label>
+                    <input type="text" name="txtLoginUsercode" id="txtLoginUsercode" value="" data-clear-btn="true" maxlength="20"  required />
+                    <label for="txtPassword">Password (min 5 chars):</label>
+                    <input type="password" name="txtLoginPassword" id="txtLoginPassword" value="" data-clear-btn="true" maxlength="20"  required />
+                    
+               </div>
+                
+                <div class="ui-body ui-body-a ui-corner-all">
+                    
+                    <input type="button" value="Login" id="btnLogin" />
+
+
+                </div>
+            </form>
+
+        </div>
+        <!-- /content -->
+
+
+        <div data-role="footer" data-position="fixed" data-fullscreen="false" class="linguafooter">
+            <h4>LinguaSnapp</h4>
+
+
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+     <!-- Show pending uploads page -->
+    <div data-role="page" id="pendingUploads">
+
+        <div data-role="header" data-position="fixed" data-fullscreen="false" class="navheader">
+             <a href="#main" id="pendingBack" class="ui-btn ui-btn-inline ui-icon-carat-l ui-btn-icon-left">Home</a>
+            
+        </div>
+        <!-- /header -->
+
+        <div data-role="ui-content">
+            
+            <div class="ui-body ui-body-a ui-corner-all">
+                <h3>LinguaSnapp Pending Uploads</h3>
+            </div>
+
+            <ul id="ulPending" data-role="listview" data-inset="true">
+
+            </ul>
+
+        </div>
+        <!-- /content -->
+
+
+        <div data-role="footer" data-position="fixed" data-fullscreen="false" class="linguafooter">
+           
+
+
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+
+    <!-- Photo record page 1 -->
+    <div data-role="page" id="photo1">
+
+        <div data-role="header" data-position="fixed" data-fullscreen="false" class="navheader">
+            <div data-role="navbar">
+                <ul>
+                   <li><a id="lnkPhotoCancel1" class="ui-btn  ui-btn-inline ui-icon-carat-l ui-btn-icon-bottom">Cancel</a></li> 
+               
+                    <li><a id="lnkPhotoSave1" class="ui-btn  ui-btn-inline ui-icon-plus ui-btn-icon-bottom ">Save</a></li> 
+               
+                   <li> <a id="btnUpload" class="ui-btn  ui-btn-inline ui-icon-arrow-u ui-btn-icon-bottom  ">Upload </a></li> 
+                
+                   <li> <a id="lnkPhotoDelete1" class="ui-btn  ui-btn-inline ui-icon-delete ui-btn-icon-bottom">Delete</a></li> 
+               </ul>
+            </div>
+        </div>
+        <!-- /header -->
+      
+
+        <div data-role="ui-content">
+            <form id="frmPhoto1">
+                <div class="ui-body ui-body-a ui-corner-all">
+                    <div class="upperPhotoPanel">
+                        <a id="lnkImagePage1"  class="ui-btn ui-icon-search ui-btn-icon-bottom bigImageButton " >
+                        <img id="imgPhoto" alt="The image of the photo" class="imagePhoto" />
+                        </a>
+                    </div>
+                    <div class="upperPhotoPanel">
+                        
+
+                        <ul data-role="listview" data-inset="true" data-filter="false" class="ui-mini">
+                            <li><a href="#photo1" id="btnPhoto1">Language</a></li>
+                            <li><a href="#photo2" id="btnPhoto2">Context</a></li>
+                            <li><a href="#photo3" id="btnPhoto3">Analysis</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+               
+                <div class="ui-body ui-body-a ui-corner-all ">
+                    <div class="ui-grid-solo">
+                        <div class="ui-block-a">
+                            <span id="txtUniqueID1" style="display: none"></span>
+                            <label for="txtTitle">Title</label>
+                            <input data-mini="true" data-clear-btn="true" type="text" name="txtTitle" id="txtTitle" value="" required />
+                        </div>
+                    </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+
+                            <label for="numLanguages">No. of Languages</label>
+                            <input data-mini="true" data-clear-btn="true" type="number" name="numLanguages" id="numLanguages" value="0" />
+
+
+                        </div>
+
+                        <div class="ui-block-b">
+
+                            <label for="numAlphabets">No. of Alphabets</label>
+                            <input data-mini="true" data-clear-btn="true" type="number" name="numAlphabets" id="numAlphabets" value="0" />
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="ui-body ui-body-a ui-corner-all">
+                    <span class="smallText"><strong>Your current Languages and Translations for this photo</strong></span><br />
+                    <span class="verySmallText">Please enter more in the form below</span><br />
+                    <div id="divLangList"></div>
+                </div>
+
+                <div class="ui-body ui-body-a ui-corner-all">
+
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+
+                            <label for="ddlLanguage">Language</label>
+                            <select data-mini="true" name="ddlLanguage" id="ddlLanguage"></select>
+
+
+                            <div id="divLanguageOther" style="display: none">
+
+                                <input data-mini="true" data-clear-btn="true" type="text" name="txtLanguageOther" id="txtLanguageOther" value="" />
+
+                            </div>
+                        </div>
+
+                        <div class="ui-block-b">
+
+                            <label for="ddlAlphabet">Alphabet</label>
+                            <select data-mini="true" name="ddlAlphabet" id="ddlAlphabet"></select>
+
+                            <div id="divAlphabetOther" style="display: none">
+
+                                <input data-mini="true" data-clear-btn="true" type="text" name="txtAlphabetOther" id="txtAlphabetOther" value="" />
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <div class="ui-block-a">
+                            <label for="txtTranslation">Translation:</label>
+                            <input data-mini="true" data-clear-btn="true" type="text" name="txtTranslation" id="txtTranslation" value="" />
+
+
+                            <input type="button" value="Add Your Language and/or Translation" data-mini="true" id="btnAddLang" />
+                        </div>
+                    </div>
+
+                </div>
+
+                
+            </form>
+
+        </div>
+        <!-- /content -->
+
+
+       
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+     <!-- Photo record page 2 -->
+    <div data-role="page" id="photo2">
+
+         <div data-role="header" data-position="fixed" data-fullscreen="false" class="navheader">
+          <div data-role="navbar">
+                <ul>
+                   <li><a id="lnkPhotoCancel2" class="ui-btn  ui-btn-inline ui-icon-carat-l ui-btn-icon-bottom">Cancel</a></li> 
+               
+                    <li><a id="lnkPhotoSave2" class="ui-btn  ui-btn-inline ui-icon-plus ui-btn-icon-bottom ">Save</a></li> 
+               
+                   <li> <a id="btnUpload2" class="ui-btn  ui-btn-inline ui-icon-arrow-u ui-btn-icon-bottom  ">Upload </a></li> 
+                
+                   <li> <a id="lnkPhotoDelete2" class="ui-btn  ui-btn-inline ui-icon-delete ui-btn-icon-bottom">Delete</a></li> 
+               </ul>
+            </div>
+             
+        </div>
+       
+        <!-- /header -->
+
+        <div data-role="ui-content">
+            <form id="frmPhoto2"  >
+                <div class="ui-body ui-body-a ui-corner-all">
+                    <div class="upperPhotoPanel">
+                        <a id="lnkImagePage2"  class="ui-btn ui-icon-search ui-btn-icon-bottom bigImageButton " >
+                        <img id="imgPhoto2" alt="The image of the photo" class="imagePhoto" />
+                            </a>
+                    </div>
+                    <div class="upperPhotoPanel">
+                        
+
+                        <ul data-role="listview" data-inset="true" data-filter="false" class="ui-mini">
+                            <li><a href="#photo1" id="btn2Photo1">Language</a></li>
+                            <li><a href="#photo2" id="btn2Photo2">Context</a></li>
+                            <li><a href="#photo3" id="btn2Photo3">Analysis</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="ui-body ui-body-a ui-corner-all ">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <span id="txtUniqueID2" style="display: none"></span>
+
+
+                            <label for="ddlPosition">Position</label>
+                            <select data-mini="true" name="ddlPosition" id="ddlPosition" ></select>
+
+                        </div>
+
+                        <div class="ui-block-b">
+                            <label for="ddlSignType" >Sign Type</label>
+                            <select data-mini="true" name="ddlSignType" id="ddlSignType" ></select>
+                        </div>
+                        <div class="ui-block-a">
+                            <label for="ddlOutlet" >Outlet</label>
+                            <select data-mini="true" name="ddlOutlet" id="ddlOutlet" ></select>
+
+                            <div id="divOutletOther" style="display: none">
+                               
+                                <input data-mini="true" data-clear-btn="true" type="text" name="txtOutletOther" id="txtOutletOther" value=""  />
+
+                            </div>
+                        </div>
+                        <div class="ui-block-b">
+                            <label for="ddlContent" >Content</label>
+                            <select data-mini="true" data-native-menu="false" multiple="multiple" name="ddlContent" id="ddlContent"></select>
+
+
+                            <label for="ddlDesign" >Design</label>
+                            <select data-mini="true" data-native-menu="false" multiple="multiple" name="ddlDesign" id="ddlDesign" ></select>
+                        </div>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <div class="ui-block-a">
+                            <label for="txtComments">Comments</label>
+                            <textarea name="txtComments" id="txtComments" style="resize:none" data-autogrow="false" ></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+            </form>
+
+        </div>
+        <!-- /content -->
+
+
+       
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+
+         <!-- Photo record page 3 -->
+    <div data-role="page" id="photo3">
+
+          <div data-role="header" data-position="fixed" data-fullscreen="false" class="navheader">
+            <div data-role="navbar">
+                <ul>
+                   <li><a id="lnkPhotoCancel3" class="ui-btn  ui-btn-inline ui-icon-carat-l ui-btn-icon-bottom">Cancel</a></li> 
+               
+                    <li><a id="lnkPhotoSave3" class="ui-btn  ui-btn-inline ui-icon-plus ui-btn-icon-bottom ">Save</a></li> 
+               
+                   <li> <a id="btnUpload3" class="ui-btn  ui-btn-inline ui-icon-arrow-u ui-btn-icon-bottom  ">Upload </a></li> 
+                
+                   <li> <a id="lnkPhotoDelete3" class="ui-btn  ui-btn-inline ui-icon-delete ui-btn-icon-bottom">Delete</a></li> 
+               </ul>
+            </div>
+              
+        </div>
+        <!-- /header -->
+
+        <div data-role="ui-content">
+            <form id="frmPhoto3"  >
+                <div class="ui-body ui-body-a ui-corner-all">
+                    <div class="upperPhotoPanel">
+                         <a id="lnkImagePage3"  class="ui-btn ui-icon-search ui-btn-icon-bottom bigImageButton " >
+                        <img id="imgPhoto3" alt="The image of the photo" class="imagePhoto" />
+                             </a>
+                    </div>
+                    <div class="upperPhotoPanel">
+                       
+
+                        <ul data-role="listview" data-inset="true" data-filter="false" class="ui-mini">
+                            <li><a href="#photo1" id="btn3Photo1">Language</a></li>
+                            <li><a href="#photo2" id="btn3Photo2">Context</a></li>
+                            <li><a href="#photo3" id="btn3Photo3">Analysis</a></li>
+                        </ul>
+                         <a id="btnAboutPage3"  class="ui-btn ui-icon-info ui-mini ui-btn-icon-left  questionMark" >About This <br /> Screen</a>
+                    </div>
+                </div>
+                <div class="ui-body ui-body-a ui-corner-all ">
+
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <span id="txtUniqueID3" style="display: none"></span>
+
+                           
+                               
+                                    <label for="ddlSector" >Sector</label>
+                                
+                               
+
+                               
+                            
+                            <select data-mini="true" name="ddlSector" id="ddlSector"></select>
+
+                        </div>
+
+                        <div class="ui-block-b">
+                            <label for="ddlAudience" >Audience</label>
+                            <select data-mini="true" name="ddlAudience" id="ddlAudience" ></select>
+                        </div>
+
+                        <div class="ui-block-a">
+                            <label for="ddlPurpose" >Purpose</label>
+                            <select data-mini="true" data-native-menu="false" multiple="multiple" name="ddlPurpose" id="ddlPurpose" ></select>
+                        </div>
+
+                        <div class="ui-block-b">
+                            <label for="ddlFunction" >Function</label>
+                            <select data-mini="true" data-native-menu="false" multiple="multiple" name="ddlFunction" id="ddlFunction" ></select>
+                        </div>
+
+                        <div class="ui-block-a">
+                            <label for="ddlArrangement" >Arrangement</label>
+                            <select data-mini="true" data-native-menu="false" multiple="multiple" name="ddlArrangement" id="ddlArrangement" ></select>
+                        </div>
+                        <div class="ui-block-b">
+                        </div>
+
+                        <div class="ui-block-a">
+                            <label for="chkOneLang">One lang. dominant?</label>
+                            <input type="checkbox" id="chkOneLang" data-role="flipswitch" data-off-text="No" data-on-text="Yes" />
+                        </div>
+
+                        <div class="ui-block-b">
+                            <div id="divDominance" style="display: none">
+                                <label for="ddlDominance" >Dominance</label>
+                                <select data-mini="true" data-native-menu="false" multiple="multiple" name="ddlDominance" id="ddlDominance" ></select>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </form>
+
+        </div>
+        <!-- /content -->
+
+
+       
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+
+    <!-- Show Photo page -->
+    <div data-role="page" id="showPhoto">
+
+        <div data-role="header" data-position="fixed" data-fullscreen="false" class="navheader">
+
+           <a  id="lnkBigImageBack" data-rel="back" href="#" class="ui-icon-carat-l ui-btn ui-btn-inline ui-btn-icon-left">Back</a>
+        </div>
+        <!-- /header -->
+
+        <div data-role="ui-content">
+
+            <div class="ui-body ui-body-a ui-corner-all">
+                <img  alt="The image" id="imgBigImage" class="bigImage" />
+            </div>
+
+        </div>
+        <!-- /content -->
+
+
+       
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+    <!-- The about screen for page 3 -->
+    <div data-role="page" id="aboutPage3">
+
+        <div data-role="header" data-position="fixed" data-fullscreen="false" class="navheader">
+
+           <a  id="lnkAboutPage3Back" data-rel="back" href="#" class="ui-icon-carat-l ui-btn ui-btn-inline ui-btn-icon-left">Back</a>
+        </div>
+        <!-- /header -->
+
+        <div data-role="ui-content">
+
+            <div class="ui-body ui-body-a ui-corner-all">
+                This optional screen contains more analytical information for the LinguaSnapp project. See below for the
+                explanation of each drop-down box.
+            </div>
+            <div class="ui-body ui-body-a ui-corner-all">
+               <h4>Sector </h4>
+                <p>
+                <em>Public:</em> government or public agency; top-down<br />
+                <em>Private:</em> individual, commercial; bottom-up
+                </p>
+
+                <h4>Audience selection</h4>
+                <p>
+                <em>Exclusive:</em> message singles out particular target population <br />
+                <em>Inclusive:</em> makes message accessible to wider target populations
+                </p>
+
+                <h4>Language purpose: </h4>
+                <p>
+                <em>Communicative:</em> provides content information <br />
+                <em>Emblematic:</em> attracts emotional identification
+                </p>
+
+
+                <h4>Message function</h4>
+                <p>
+                <em>Landmark:</em> identifies location in relation to history, tradition, customs <br />
+                <em>Recruitment:</em> engages audience with the agent <br />
+                <em>Public statement:</em> seeks to influence opinion<br />
+                <em>Muted:</em> has only accidental value, not intended to relate to specific location (eg displaced label)
+                </p>
+
+                <h4>Arrangement of languages  </h4>
+                <p>
+               <em>Duplicating:</em> repetition of same content <br />
+                <em>Fragmentary:</em> translation of selected parts <br />
+               <em>Overlapping:</em> repetition of overall message with different content elements <br /> 
+               <em>Complementary:</em> different languages for different aspects of message content
+                </p>
+            </div>
+
+        </div>
+        <!-- /content -->
+
+
+       
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+</body>
+</html>
