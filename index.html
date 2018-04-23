@@ -14,8 +14,18 @@
     <script src="lib/jquery.mobile-1.4.5.min.js"></script>
     <script src="lib/jquery.validate.min.js"></script>
     <script src="lib/additional-methods.min.js"></script>
+
+    <script src="lib/jquery.i18n.js"></script>
+    <script src="lib/jquery.i18n.messagestore.js"></script>
+    <script src="lib/jquery.i18n.fallbacks.js"></script>
+    <script src="lib/jquery.i18n.language.js"></script>
+    <script src="lib/jquery.i18n.parser.js"></script>
+    <script src="lib/jquery.i18n.emitter.js"></script>
+    <script src="lib/jquery.i18n.emitter.bidi.js"></script>
+
+    <script src="scripts/config.js"></script>
     <script src="scripts/utils/phonegap-utils.js"></script>
-    <script src="scripts/data/config.js"></script>
+    <script src="scripts/data/configDB.js"></script>
     <script src="scripts/data/populateDB.js"></script>
     <script src="scripts/data/photo-record-data.js"></script>
     <script src="scripts/data/descriptor-data.js"></script>
@@ -65,8 +75,8 @@
 
         <div data-role="footer" data-position="fixed" data-fullscreen="false" class="linguafooter">
 
-            <h4>LinguaSnapp</h4>
-             <input type="hidden" value="yes" id="mobile" />
+            <h4 data-i18n="lingua-title"></h4>
+             <input type="hidden" value="no" id="mobile" />
             <input type="hidden" value="yes" id="rebuild" />
         </div>
         <!-- /footer -->
@@ -86,7 +96,7 @@
 
         <div data-role="ui-content">
             <ul data-role="listview" data-inset="true" data-filter="false">
-                <li><a href="#" id="lnkTakePhoto">Take Photo</a></li>
+                <li><a href="#" id="lnkTakePhoto" data-i18n="lingua-takephoto"></a></li>
                 <li><a href="#" id="lnkShowPending">Show Pending Uploads</a></li>
                 <li><a href="#" id="lnkUploadPending">Upload All Pending Photos</a></li>
                 <li><a href="#about">About LinguaSnapp</a></li>
@@ -113,7 +123,7 @@
     <div data-role="page" id="about">
 
         <div data-role="header" data-position="fixed" data-fullscreen="false" class="navheader">
-            <a href="#main" id="aboutBack" class="ui-btn ui-btn-inline ui-icon-carat-l ui-btn-icon-left">Back</a>
+            <a href="#main" id="aboutBack" class="ui-btn ui-btn-inline ui-icon-carat-l ui-btn-icon-left" data-i18n="lingua-back"></a>
             <br />
            
         </div>
@@ -163,7 +173,7 @@
 
         <div data-role="footer" data-position="fixed" data-fullscreen="false" >
             
-
+            <h4><span data-app-text="app-title"></span></h4>
 
         </div>
         <!-- /footer -->
@@ -184,40 +194,38 @@
             <form id="frmRegister"  >
                 <div class="ui-body ui-body-a ui-corner-all">
 
-                    <p>Please register with the LinguaSnapp server, or <a href="#login">log in</a> if you have already registered.</p> 
-                    <label for="txtUsercode">Choose a usercode (min 5 chars):</label>
+                    <p><span data-i18n="register-pleasereg"></span> <span data-app-text="app-title"></span> <span data-i18n="register-or"></span><a href="#login" data-i18n="register-login"></a> <span data-i18n="register-alreadyreg"></span></p> 
+                    <label for="txtUsercode" data-i18n="register-chooseusercode"></label>
                     <input type="text" name="txtUsercode" id="txtUsercode" value="" data-clear-btn="true" maxlength="20"  required />
-                    <label for="txtPassword">Password (min 5 chars):</label>
+                    <label for="txtPassword" data-i18n="register-password"></label>
                     <input type="password" name="txtPassword" id="txtPassword" value="" data-clear-btn="true" maxlength="20"  required />
-                    <label for="txtConfirm">Confirm password:</label>
+                    <label for="txtConfirm" data-i18n="register-confirmpassword"></label>
                     <input type="password" name="txtConfirm" id="txtConfirm" value="" data-clear-btn="true" maxlength="20" required />
                </div>
                 <div class="ui-body ui-body-a ui-corner-all">
 
 
-                    <p>Your email address is optional and can be used by you to identify yourself, should you wish to. It will not be shared with others 
-                        and will also allow you to receive messages on our mailing list if you want them. 
-                        If you are a University of Manchester student and have been asked to use this app as part of your course unit then please enter your university email address 
-                        to allow us to identify you for your group work.</p>
-                    <label for="emailAddress">Your Email Address:</label>
+                    <p><span data-i18n="register-emailoptional"></span><span data-app-text="app-emailstudent"></span>
+                        </p>
+                    <label for="emailAddress" data-i18n="register-emailaddress"></label>
                     <input type="email" name="emailAddress" id="emailAddress" value="" data-clear-btn="true" />
                   
 
                     <fieldset data-role="controlgroup" data-type="horizontal" class="fullWidth">
-                        <legend>Join our mailing list?</legend>
+                        <legend data-i18n="register-mailinglist"></legend>
                         <input type="radio" name="mailingList" id="mailingList-1" value="yes" />
-                        <label for="mailingList-1">Yes</label>
+                        <label for="mailingList-1" data-i18n="register-yes"></label>
 
                         <input type="radio" name="mailingList" id="mailingList-2" value="no" checked="checked" />
-                        <label for="mailingList-2">No</label>
+                        <label for="mailingList-2" data-i18n="register-no"></label>
                     </fieldset>
                 </div>
                 <div class="ui-body ui-body-a ui-corner-all">
                     <ul data-role="listview" data-inset="true">
-                        <li><a href="#about">About LinguaSnapp</a></li>
+                        <li><a href="#about"><span data-i18n="lingua-about"></span> <span data-app-text="app-title"></span></a></li>
 
                     </ul>
-                    <input type="button" value="Register" id="btnRegister" />
+                    <button data-i18n="register-register" id="btnRegister"></button>
 
 
                 </div>
@@ -228,7 +236,7 @@
 
 
         <div data-role="footer" data-position="fixed" data-fullscreen="false" class="linguafooter">
-            <h4>LinguaSnapp</h4>
+            <h4><span data-app-text="app-title"></span></h4>
 
 
         </div>

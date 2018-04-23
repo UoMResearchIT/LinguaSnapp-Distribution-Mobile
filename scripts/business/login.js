@@ -10,6 +10,7 @@ var Login = function (db) {
     this.linguaDB = db;
 
     this.configDB = new ConfigDB(this.linguaDB);
+    this.config = new Config();
     this.phoneGapUtils = new PhoneGapUtils();
 
     //-------------------------------------------------------------------------------------------------------------
@@ -53,7 +54,7 @@ var Login = function (db) {
 
                 // Send the registration info
                 var promise = $.ajax({
-                    url: self.configDB.serverLocation + "/api/login",
+                    url: self.config.serverLocation + "/api/login",
                     accepts: "application/json",
                     contentType: "application/json",
                     dataType: "json",
@@ -100,7 +101,7 @@ var Login = function (db) {
                                 promise3.done(function () {
                                     // Send the registration info
                                     var promise4 = $.ajax({
-                                        url: self.configDB.serverLocation + "/api/confirmconfig",
+                                        url: self.config.serverLocation + "/api/confirmconfig",
                                         accepts: "application/json",
                                         contentType: "application/json",
                                         dataType: "json",

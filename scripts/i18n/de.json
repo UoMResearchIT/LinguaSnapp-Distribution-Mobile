@@ -1,0 +1,31 @@
+﻿{
+  "@metadata": {
+
+    "authors": [
+
+      "Jannis Androutsopoulos"
+
+    ],
+
+    "last-updated": "2018-04-20",
+
+    "locale": "de"
+
+  },
+  "lingua-takephoto": "Foto hinzufügen",
+  "lingua-about": "Über ",
+  "lingua-back": "Zurück",
+  "register-alreadyreg": ", wenn Du bereits registriert bist.",
+  "register-chooseusercode": "Wähle einen Benutzernamen (min. 5 Buchstaben):",
+  "register-login": "melde dich an",
+  "register-or": " oder ",
+  "register-pleasereg": "Bitte registriere Dich bei ",
+  "register-confirmpassword": "Passwort bestätigen:",
+  "register-password": "Passwort (min. 5 Buchstaben):",
+  "register-emailoptional": "Die Angabe Deiner Email-Adresse ist optional. Sie wird nicht mit anderen geteilt. Du kannst Deine Email nutzen um Dich zu identifizieren, falls Du dies wünschst. Außerdem kannst Du Dich in unsere Mailingliste eintragen lassen. ",
+  "register-emailaddress": "E-Mail:",
+  "register-mailinglist": "Mailingliste beitreten?",
+  "register-yes": "Ja",
+  "register-no": "Nein",
+  "register-register": "Registrieren"
+}

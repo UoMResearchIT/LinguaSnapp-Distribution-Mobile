@@ -4,6 +4,8 @@
 
 var PhoneGapUtils = function () {
 
+    var config = new Config();
+
     //-------------------------------------------------------------------------------------------------------------
 
     // isNetworkConnected()
@@ -129,5 +131,23 @@ var PhoneGapUtils = function () {
        });
 
        return unique_id;
+   }
+
+
+    //-------------------------------------------------------------------------------------------------------------
+
+    // addAppText()
+    // Add the bespoke app text to the HTML
+   this.addAppText = function () {
+       var self = this;
+
+       // find spans with the data-app-text attribute
+       $('span[data-app-text]').each(function () {
+           var textCode = $(this).data("app-text");
+           
+           var textString = config.appText[textCode]; // find the text in config.js
+
+           $(this).text(textString);
+       });
    }
 }

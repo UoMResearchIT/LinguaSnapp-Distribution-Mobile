@@ -10,7 +10,7 @@
   <name>Lingua Snapp Dist</name>
 
   <description>
-    LinguaSnapp - Documenting Manchester's Multi-Lingual Landscape
+    LinguaSnapp - The Global Multi-Lingual Landscape
   </description>
 
   <author href="http://linguasnapp.com" email="help@linguasnapp.com">
@@ -18,7 +18,7 @@
   </author>
 
   <preference name="permissions" value="none"/>
-  <preference name="phonegap-version" value="cli-6.3.0" /> 
+  <preference name="phonegap-version" value="cli-7.1.0" /> 
   <preference name="orientation" value="portrait" />
   <preference name="ios-statusbarstyle" value="black-opaque" /> 
   <preference name="target-device" value="handset" />
@@ -93,16 +93,17 @@
   <feature name="http://api.phonegap.com/1.0/camera"/> 
   <feature name="http://api.phonegap.com/1.0/geolocation"/> 
   
-  <gap:plugin name="cordova-sqlite-evcore-extbuild-free" version="0.8.1" source="npm" />
-  <gap:plugin name="cordova-plugin-device" version="1.1.3" source="npm" />
-  <gap:plugin name="cordova-plugin-network-information" version="1.3.0" source="npm"/>
-  <gap:plugin name="cordova-plugin-camera" version="2.3.0" source="npm" />
-  <gap:plugin name="cordova-plugin-geolocation" version="2.3.0" source="npm" />
-  <gap:plugin name="cordova-plugin-dialogs" version="1.3.0" source="npm" />
-  <gap:plugin name="cordova-plugin-statusbar" version="2.2.0" source="npm" />
-  <gap:plugin name="cordova-plugin-inappbrowser" spec="1.5.0" source="npm" />
-  <plugin name="cordova-plugin-splashscreen" spec="3.2.2" source="npm"/>
-  <plugin name="cordova-plugin-whitelist" spec="1.3.0" source="npm" />
+  <plugin name="cordova-sqlite-evcore-extbuild-free" version="0.9.7" source="npm" />
+  <plugin name="cordova-plugin-device" version="2.0.2" source="npm" />
+  <plugin name="cordova-plugin-network-information" version="2.0.1" source="npm"/>
+  <plugin name="cordova-plugin-camera" version="4.0.3" source="npm" />
+  <plugin name="cordova-plugin-geolocation" version="4.0.1" source="npm" />
+  <plugin name="cordova-plugin-dialogs" version="2.0.1" source="npm" />
+  <plugin name="cordova-plugin-statusbar" version="2.4.2" source="npm" />
+  <plugin name="cordova-plugin-inappbrowser" spec="3.0.0" source="npm" />
+  <plugin name="cordova-plugin-splashscreen" spec="5.0.2" source="npm"/>
+  <plugin name="cordova-plugin-whitelist" spec="1.3.3" source="npm" />
+  <plugin name="cordova-plugin-globalization" spec="1.11.0" source="npm" />
 
   <access origin="https://api.lingusnapp.com" subdomains="true" />
     

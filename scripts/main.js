@@ -22,12 +22,12 @@ function registerEvents(db) {
     var pen = new PendingPresentation(db);
     pen.registerEvents();
 
-  
+
 
     // Clear the history to stop the back button (we only want navigation from the on-screen buttons) 
     $(document).on('pagecontainerchange', function (e, ui) {
-      
-         e.stopPropagation();
+
+        e.stopPropagation();
     });
 
     // Disable the back button on Android
@@ -54,8 +54,11 @@ function registerEvents(db) {
 
 function init(db) {
 
+   
+
     registerEvents(db);
 
+    
     var popDB = new PopulateDB(db);
     var register = new Register(db);
 
@@ -64,38 +67,81 @@ function init(db) {
     promise.done(function () {
         register.checkRegistered();
     });
-    
+
 }
 
 
 
 // Device is ready (app loaded)
 function onDeviceReady() {
-    
-   
+
+
 
     // iOS Statusbar
     if (device.platform.toLowerCase === "ios") {
         StatusBar.overlaysWebView(false);
         StatusBar.styleDefault();
     }
-    
-    var db = window.sqlitePlugin.openDatabase({ name: "LinguaSnapp.db", location:"default"  });
+
+    var db = window.sqlitePlugin.openDatabase({ name: "LinguaSnapp.db", location: "default" });
     init(db);
-    
+
+    $.i18n().load({
+        'en': './scripts/i18n/en.json',
+        'de': './scripts/i18n/de.json'
+    }).done(function () {
+
+
+        navigator.globalization.getPreferredLanguage(
+            function (language) {
+                var lang = language.value.split("-")[0];
+                
+                $.i18n({
+                    locale: lang
+                });
+
+                $('body').i18n();
+            },
+            function () {
+                // if there is an error getting the preferred language then default to English
+                $.i18n({
+                    locale: 'en'
+                });
+
+                $('body').i18n();
+            }
+            );
+    })
 }
 
 
 $(document).ready(function () {
 
-    
+
     // Wait for app to load
     document.addEventListener("deviceready", onDeviceReady, false);
-    
-  
-    if ($("#mobile").val() === "no")
-    {
+
+
+    if ($("#mobile").val() === "no") {
         var db = window.openDatabase("LinguaSnapp.db", "1.0", "LinguaSnapp", 1024 * 1024);
         init(db);
+
+        // if you are testing on a browser then you can manually change the language in the 'locale' setting below.
+        $.i18n().load({
+            'en': './scripts/i18n/en.json',
+            'de': './scripts/i18n/de.json'
+        }).done(function () {
+            $.i18n({
+                locale: 'de'
+            });
+
+            $('body').i18n();
+
+            
+        })
+
+        var phoneGapUtils = new PhoneGapUtils();
+        phoneGapUtils.addAppText();
+
     }
 });

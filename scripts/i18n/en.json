@@ -1,0 +1,31 @@
+﻿{
+  "@metadata": {
+
+    "authors": [
+
+      "Andrew Jerrison"
+
+    ],
+
+    "last-updated": "2018-04-20",
+
+    "locale": "en"
+
+  },
+  "lingua-takephoto": "Take Photo",
+  "lingua-about": "About ",
+  "lingua-back": "Back",
+  "register-alreadyreg": ", if you have already registered.",
+  "register-chooseusercode": "Choose a usercode (min. 5 chars):",
+  "register-login": "log in",
+  "register-or": " or ",
+  "register-pleasereg": "Please register with ",
+  "register-confirmpassword": "Confirm password:",
+  "register-password": "Password (min 5 chars):",
+  "register-emailoptional": "Your email address is optional and can be used by you to identify yourself, should you wish to. It will not be shared with others and will also allow you to receive messages on our mailing list if you want them. ",
+  "register-emailaddress": "Your email address:",
+  "register-mailinglist": "Join our mailing list?",
+  "register-yes": "Yes",
+  "register-no": "No",
+  "register-register": "Register"
+}

@@ -10,6 +10,7 @@ var Upload = function (db) {
     this.linguaDB = db;
 
     this.configDB = new ConfigDB(this.linguaDB);
+    this.config = new Config();
     this.phoneGapUtils = new PhoneGapUtils();
     this.photoRecord = new PhotoRecord(this.linguaDB);
 
@@ -198,7 +199,7 @@ var Upload = function (db) {
 
         // Send the registration info
         var upload_promise = $.ajax({
-            url: self.configDB.serverLocation + "/api/upload",
+            url: self.config.serverLocation + "/api/upload",
             accepts: "application/json",
             contentType: "application/json",
             dataType: "json",
