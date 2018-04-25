@@ -21,7 +21,7 @@ var PendingPresentation = function (db) {
            
             var photoRecordPres = new Photo1Presentation(self.linguaDB);
             $.mobile.loading('show', {
-                text: "Loading record.",
+                text: $.i18n('lingua-loading'),
                 textVisible: true
 
             });
@@ -58,7 +58,7 @@ var PendingPresentation = function (db) {
 
             var commentsStr = "";
             if ((photo.latitude === 999 || photo.longitude === 999) && (photo.comments === null || photo.comments === "")) {
-                commentsStr = "<br/><span style='color:Red; font-size:x-small'>Please enter the address in the comments</span>";
+                commentsStr = "<br/><span style='color:Red; font-size:x-small'>" + $.i18n('pending-address') + "</span>";
             }
 
             if (photo.latitude !== 999 && photo.longitude !== 999) {
@@ -74,7 +74,7 @@ var PendingPresentation = function (db) {
                             + "<br/> <span style='font-size:small'>"
                             + created
                             + "<br/> <span style='font-size:small'>"
-                            + "Approx size: " + imageSize.toString() + "KiB"
+                            + $.i18n('pending-approxsize') + imageSize.toString() + "KiB"
                             + "</span>" + commentsStr + " </a></li>");
 
             

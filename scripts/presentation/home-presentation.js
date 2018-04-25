@@ -22,7 +22,7 @@ var HomePresentation = function (db) {
             var photoRecord = new PhotoRecord(self.linguaDB);
             var photoRecordPres = new Photo1Presentation(self.linguaDB);
             $.mobile.loading('show', {
-                text: "Saving photo.",
+                text: $.i18n('lingua-saving'),
                 textVisible: true
 
             });
@@ -55,7 +55,7 @@ var HomePresentation = function (db) {
 
 
             $.mobile.loading('show', {
-                text: "Loading records.",
+                text: $.i18n('lingua-loading'),
                 textVisible: true
 
             });
@@ -80,7 +80,7 @@ var HomePresentation = function (db) {
 
 
             $.mobile.loading('show', {
-                text: "Uploading records.",
+                text: $.i18n('lingua-uploading'),
                 textVisible: true
 
             });

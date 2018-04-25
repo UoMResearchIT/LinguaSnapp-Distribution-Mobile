@@ -18,17 +18,22 @@ var PhoneGapUtils = function () {
         if (typeof navigator.connection !== 'undefined') {
  
             var connectionState = navigator.connection.type;
+            if (typeof connectionState !== 'undefined') {
+                // Not connected
+                if (connectionState === Connection.NONE) {
 
-            // Not connected
-            if (connectionState === Connection.NONE) {
 
+                    this.showAlert("You are not connected to the Internet");
 
-                this.showAlert("You are not connected to the Internet");
-
-                deferred.reject();
+                    deferred.reject();
+                }
+                else { // connected
+                    deferred.resolve();
+                }
             }
-            else { // connected
+            else {// If the PhoneGap connection type object isn't even defined then we must be using the emulator, so return true
                 deferred.resolve();
+
             }
         }
         else { // If the PhoneGap connection object isn't even defined then we must be using the emulator, so return true
@@ -147,7 +152,18 @@ var PhoneGapUtils = function () {
            
            var textString = config.appText[textCode]; // find the text in config.js
 
-           $(this).text(textString);
+           $(this).html(textString);
        });
    }
+
+    //-------------------------------------------------------------------------------------------------------------
+
+    // getAppText()
+    // Get the bespoke app text for this key
+   this.getAppText = function (textCode) {
+       
+       return config.appText[textCode]; // find the text in config.js
+  
+   }
+
 }

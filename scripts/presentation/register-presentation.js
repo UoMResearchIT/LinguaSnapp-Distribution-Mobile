@@ -38,21 +38,21 @@ var RegisterPresentation = function (db) {
                     txtUsercode: {
 
                        
-                        pattern: "At least 5 characters, letters or numbers only."
+                        pattern: $.i18n('register-pattern'),
 
                     },
                     txtPassword: {
 
-                        minlength: jQuery.validator.format("At least {0} characters required!"),
+                        minlength: jQuery.validator.format($.i18n('register-pwdpattern')),
 
 
                     },
 
                     txtConfirm: {
 
-                        minlength: jQuery.validator.format("At least {0} characters required!"),
+                        minlength: jQuery.validator.format($.i18n('register-pwdpattern')),
 
-                        equalTo: "Your passwords do not match."
+                        equalTo: $.i18n('register-notmatch')
                     }
                 }
 

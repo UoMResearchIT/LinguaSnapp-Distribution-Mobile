@@ -65,7 +65,7 @@
 
             <div class="ui-body ui-body-a ui-corner-all initialisingDiv" >
                 <div class="loadingDiv">
-                    Initialising
+                    <span data-i18n="lingua-initialising"></span>
                 </div>
             </div>
 
@@ -75,7 +75,7 @@
 
         <div data-role="footer" data-position="fixed" data-fullscreen="false" class="linguafooter">
 
-            <h4 data-i18n="lingua-title"></h4>
+            <h4> <span data-app-text="app-title"></span></h4>
              <input type="hidden" value="no" id="mobile" />
             <input type="hidden" value="yes" id="rebuild" />
         </div>
@@ -96,10 +96,10 @@
 
         <div data-role="ui-content">
             <ul data-role="listview" data-inset="true" data-filter="false">
-                <li><a href="#" id="lnkTakePhoto" data-i18n="lingua-takephoto"></a></li>
-                <li><a href="#" id="lnkShowPending">Show Pending Uploads</a></li>
-                <li><a href="#" id="lnkUploadPending">Upload All Pending Photos</a></li>
-                <li><a href="#about">About LinguaSnapp</a></li>
+                <li><a href="#" id="lnkTakePhoto" data-i18n="menu-takephoto"></a></li>
+                <li><a href="#" id="lnkShowPending" data-i18n="menu-showpending"></a></li>
+                <li><a href="#" id="lnkUploadPending" data-i18n="menu-uploadall"></a></li>
+                <li><a href="#about" id="menu-about"></a></li>
             </ul>
 
 
@@ -109,7 +109,7 @@
 
         <div data-role="footer" data-position="fixed" data-fullscreen="false" class="linguafooter">
 
-            <h4>LinguaSnapp</h4>
+            <h4><span data-app-text="app-title"></span></h4>
            
         </div>
         <!-- /footer -->
@@ -134,33 +134,14 @@
              <img src="images/linguasnapplogopurple.png" alt="LinguaSnapp logo" class="lingualogo" />
                </div>
             <div class="ui-body ui-body-a ui-corner-all">
-                <p>LinguaSnapp is a project to develop a multilingual landscape map of Manchester, UK. We are trying to find the hotspots where
-                    more than one language is in common use, and what those languages are. This app will help us discover this information, by asking you,
-                    when walking down the street, to report any sign, poster, leaflet or other text that is written in more than one language. We are interested
-                    in towns and cities from outside Manchester too, in fact anywhere in the world!
-                </p>
-                <p>Using the LinguaSnapp app is simple. On the main screen simply press the <strong>Take Photo</strong> button when you see the item of interest,
-                    and your device's camera will launch. Once you have taken the photo the app will also record your present coordinates, so we can see exactly where
-                    it is located. You will also be asked to input some optional information about the language, location, and of course your translation into English if you know it!
-                    Press the <strong>Upload</strong> button when you are ready, and the photo will be transferred to our servers for examination by the project team. The photo
-                    will be deleted from your device once it is uploaded. You can save the photo for later upload too, or delete it. If you submit a photo to LinguaSnapp then you
-                    acknowledge our right to publish that image on our website.
-                </p>
-                <p>Another option on the main screen is <strong>Show Pending Uploads</strong>, which lists any photos you have not yet uploaded. You can use this screen to go back into the photo record
-                    to edit any of the language or location information that you were not able to enter at the time. The <strong>Upload All Pending Photos</strong> option will send every photo
-                    that LinguaSnapp has taken and is still on your device to our servers.
-                </p>
-                <p>
-                    When you upload your photo, it will be sent to our project team for moderation, then published on the LinguaSnapp map. You can see your photo and the photos that others have uploaded 
-                    on the map here: <a href="#" onclick="window.open('http://www.linguasnapp.manchester.ac.uk', '_system')">www.linguasnapp.manchester.ac.uk</a>.
-                </p>
-                <p>
-                    On registering you will be prompted for your email address. This is optional, just used to identify you internally, and allow you to opt-in to our mailing list if you wish. 
-                    Your details will not be passed on to anybody else.
-                </p>
+                <p id="about-para1"></p>
+                <p id="about-para2"></p>
+                <p id="about-para3"></p>
+                <p id="about-para4"></p><p id="about-maplocation"></p>
+                <p id="about-para5"></p>
             </div>
             <div class="ui-body ui-body-a ui-corner-all">
-                <p>LinguaSnapp is developed and supported by The University of Manchester. </p>
+                <p> <span id="about-credits"></span></p>
 
                 <div class="unilogodiv">
                     <img src="images/manchesteruni_purple.png" alt="University of Manchester logo" class="unilogo" />
@@ -258,17 +239,17 @@
             <form id="frmLogin"  >
                 <div class="ui-body ui-body-a ui-corner-all">
 
-                    <p>Please log into the LinguaSnapp server, or <a href="#register">register</a> if you do not have or can't remember your password.</p> 
-                    <label for="txtUsercode">Usercode (min 5 chars):</label>
+                    <p><span data-i18n="login-pleaselog"></span><a href="#register" data-i18n="login-register"></a> <span data-i18n="login-rereg"></p> 
+                    <label for="txtUsercode" data-i18n="login-usercode"></label>
                     <input type="text" name="txtLoginUsercode" id="txtLoginUsercode" value="" data-clear-btn="true" maxlength="20"  required />
-                    <label for="txtPassword">Password (min 5 chars):</label>
+                    <label for="txtPassword" data-i18n="login-password"></label>
                     <input type="password" name="txtLoginPassword" id="txtLoginPassword" value="" data-clear-btn="true" maxlength="20"  required />
                     
                </div>
                 
                 <div class="ui-body ui-body-a ui-corner-all">
                     
-                    <input type="button" value="Login" id="btnLogin" />
+                    <button id="btnLogin" data-i18n="login-login" ></button>
 
 
                 </div>
@@ -279,7 +260,7 @@
 
 
         <div data-role="footer" data-position="fixed" data-fullscreen="false" class="linguafooter">
-            <h4>LinguaSnapp</h4>
+            <h4><span data-app-text="app-title"></span></h4>
 
 
         </div>
@@ -292,7 +273,7 @@
     <div data-role="page" id="pendingUploads">
 
         <div data-role="header" data-position="fixed" data-fullscreen="false" class="navheader">
-             <a href="#main" id="pendingBack" class="ui-btn ui-btn-inline ui-icon-carat-l ui-btn-icon-left">Home</a>
+             <a href="#main" id="pendingBack" class="ui-btn ui-btn-inline ui-icon-carat-l ui-btn-icon-left" data-i18n="lingua-home"></a>
             
         </div>
         <!-- /header -->
@@ -300,7 +281,7 @@
         <div data-role="ui-content">
             
             <div class="ui-body ui-body-a ui-corner-all">
-                <h3>LinguaSnapp Pending Uploads</h3>
+                <h3 data-i18n="pending-title"></h3>
             </div>
 
             <ul id="ulPending" data-role="listview" data-inset="true">
@@ -312,7 +293,7 @@
 
 
         <div data-role="footer" data-position="fixed" data-fullscreen="false" class="linguafooter">
-           
+            <h4><span data-app-text="app-title"></span></h4>
 
 
         </div>
@@ -328,13 +309,13 @@
         <div data-role="header" data-position="fixed" data-fullscreen="false" class="navheader">
             <div data-role="navbar">
                 <ul>
-                   <li><a id="lnkPhotoCancel1" class="ui-btn  ui-btn-inline ui-icon-carat-l ui-btn-icon-bottom">Cancel</a></li> 
+                   <li><a id="lnkPhotoCancel1" class="ui-btn  ui-btn-inline ui-icon-carat-l ui-btn-icon-bottom" data-i18n="photo-cancel"></a></li> 
                
-                    <li><a id="lnkPhotoSave1" class="ui-btn  ui-btn-inline ui-icon-plus ui-btn-icon-bottom ">Save</a></li> 
+                    <li><a id="lnkPhotoSave1" class="ui-btn  ui-btn-inline ui-icon-plus ui-btn-icon-bottom " data-i18n="photo-save"></a></li> 
                
-                   <li> <a id="btnUpload" class="ui-btn  ui-btn-inline ui-icon-arrow-u ui-btn-icon-bottom  ">Upload </a></li> 
+                   <li> <a id="btnUpload" class="ui-btn  ui-btn-inline ui-icon-arrow-u ui-btn-icon-bottom  " data-i18n="photo-upload"></a></li> 
                 
-                   <li> <a id="lnkPhotoDelete1" class="ui-btn  ui-btn-inline ui-icon-delete ui-btn-icon-bottom">Delete</a></li> 
+                   <li> <a id="lnkPhotoDelete1" class="ui-btn  ui-btn-inline ui-icon-delete ui-btn-icon-bottom" data-i18n="photo-delete" ></a></li> 
                </ul>
             </div>
         </div>
@@ -353,9 +334,9 @@
                         
 
                         <ul data-role="listview" data-inset="true" data-filter="false" class="ui-mini">
-                            <li><a href="#photo1" id="btnPhoto1">Language</a></li>
-                            <li><a href="#photo2" id="btnPhoto2">Context</a></li>
-                            <li><a href="#photo3" id="btnPhoto3">Analysis</a></li>
+                            <li><a href="#photo1" id="btnPhoto1" data-i18n="photo-language"></a></li>
+                            <li><a href="#photo2" id="btnPhoto2" data-i18n="photo-context"></a></li>
+                            <li><a href="#photo3" id="btnPhoto3"  data-i18n="photo-analysis"></a></li>
                         </ul>
 
                     </div>
@@ -365,14 +346,14 @@
                     <div class="ui-grid-solo">
                         <div class="ui-block-a">
                             <span id="txtUniqueID1" style="display: none"></span>
-                            <label for="txtTitle">Title</label>
+                            <label for="txtTitle" data-i18n="photo-title"></label>
                             <input data-mini="true" data-clear-btn="true" type="text" name="txtTitle" id="txtTitle" value="" required />
                         </div>
                     </div>
                     <div class="ui-grid-a">
                         <div class="ui-block-a">
 
-                            <label for="numLanguages">No. of Languages</label>
+                            <label for="numLanguages" data-i18n="photo-numlang"></label>
                             <input data-mini="true" data-clear-btn="true" type="number" name="numLanguages" id="numLanguages" value="0" />
 
 
@@ -380,7 +361,7 @@
 
                         <div class="ui-block-b">
 
-                            <label for="numAlphabets">No. of Alphabets</label>
+                            <label for="numAlphabets" data-i18n="photo-numalpha"></label>
                             <input data-mini="true" data-clear-btn="true" type="number" name="numAlphabets" id="numAlphabets" value="0" />
 
 
@@ -392,8 +373,8 @@
                 </div>
 
                 <div class="ui-body ui-body-a ui-corner-all">
-                    <span class="smallText"><strong>Your current Languages and Translations for this photo</strong></span><br />
-                    <span class="verySmallText">Please enter more in the form below</span><br />
+                    <span class="smallText"><strong data-i18n="photo-currenttrans"></strong></span><br />
+                    <span class="verySmallText" data-i18n="photo-entermore"></span><br />
                     <div id="divLangList"></div>
                 </div>
 
@@ -402,7 +383,7 @@
                     <div class="ui-grid-a">
                         <div class="ui-block-a">
 
-                            <label for="ddlLanguage">Language</label>
+                            <label for="ddlLanguage" data-i18n="photo-language"></label>
                             <select data-mini="true" name="ddlLanguage" id="ddlLanguage"></select>
 
 
@@ -415,7 +396,7 @@
 
                         <div class="ui-block-b">
 
-                            <label for="ddlAlphabet">Alphabet</label>
+                            <label for="ddlAlphabet" data-i18n="photo-alphabet"></label>
                             <select data-mini="true" name="ddlAlphabet" id="ddlAlphabet"></select>
 
                             <div id="divAlphabetOther" style="display: none">
@@ -427,11 +408,11 @@
                     </div>
                     <div class="ui-grid-solo">
                         <div class="ui-block-a">
-                            <label for="txtTranslation">Translation:</label>
+                            <label for="txtTranslation" data-i18n="photo-translation"></label>
                             <input data-mini="true" data-clear-btn="true" type="text" name="txtTranslation" id="txtTranslation" value="" />
 
 
-                            <input type="button" value="Add Your Language and/or Translation" data-mini="true" id="btnAddLang" />
+                            <button data-mini="true" id="btnAddLang" data-i18n="photo-addtrans" ></button>
                         </div>
                     </div>
 

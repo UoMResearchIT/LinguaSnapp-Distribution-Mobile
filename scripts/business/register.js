@@ -48,7 +48,7 @@ var Register = function (db) {
         var deviceId = "";
 
         $.mobile.loading('show', {
-            text: "Registering. Please wait.",
+            text: $.i18n('register-wait'),
             textVisible: true
            
         });
@@ -107,7 +107,7 @@ var Register = function (db) {
 
                         if (data.Code === 210) {
                             // User already exists. Prompt a possible alternative.
-                            data.Message = data.Message + " Try an alternative such as " + data.Details + ".";
+                            data.Message = data.Message + " " + $.i18n('register-alternative') + " " + data.Details + ".";
                         }
 
                         self.phoneGapUtils.showAlert(data.Message);
@@ -145,7 +145,7 @@ var Register = function (db) {
 
                                     // Could not contact server
                                     promise4.fail(function (data) {
-                                        self.phoneGapUtils.showAlert("There has been an error contacting the LinguaSnapp servers. Please try again later.");
+                                        self.phoneGapUtils.showAlert($.i18n('lingua-servererror'));
                                         deferred.reject();
                                     });
 
@@ -180,7 +180,7 @@ var Register = function (db) {
 
                 // Could not contact server
                 promise.fail(function (data) {
-                    self.phoneGapUtils.showAlert("There has been an error contacting the LinguaSnapp servers. Please try again later.");
+                    self.phoneGapUtils.showAlert($.i18n('lingua-servererror'));
                     deferred.reject();
                 });
             });

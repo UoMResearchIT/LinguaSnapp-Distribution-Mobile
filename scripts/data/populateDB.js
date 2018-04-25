@@ -13,8 +13,8 @@ var PopulateDB = function(db)
     this.linguaDB = db;
     this.phoneGapUtils = new PhoneGapUtils();
 
-    this.appVersion = "1.0.0";
-
+    
+    this.config = new Config();
     this.configDB = new ConfigDB(db);
 
     
@@ -334,7 +334,7 @@ var PopulateDB = function(db)
 
 
             // update the version number of the app's database
-            var promise = self.configDB.updateValue("version", self.appVersion);
+            var promise = self.configDB.updateValue("version", self.config.appVersion);
 
             promise.fail(function () {
                 self.phoneGapUtils.showAlert("error creating database");
@@ -363,7 +363,7 @@ var PopulateDB = function(db)
         var def2 = new $.Deferred();
         var self = this;
 
-        var promise = this.configDB.checkVersionCorrect(this.appVersion);
+        var promise = this.configDB.checkVersionCorrect(this.config.appVersion);
 
         promise.fail(function () {
             // version incorrect so create tables then resolve populate() deferral

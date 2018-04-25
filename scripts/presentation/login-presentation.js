@@ -30,10 +30,10 @@ var LoginPresentation = function (db) {
                 },
                 messages: {
                     txtLoginUsercode: {
-                        pattern: "At least 5 characters, letters or numbers only."
+                        pattern: $.i18n('register-pattern')
                     },
                     txtLoginPassword: {
-                        minlength: jQuery.validator.format("At least {0} characters required!"),
+                        minlength: jQuery.validator.format($.i18n('register-pwdpattern')),
                     }
                 }
 

@@ -70,7 +70,25 @@ function init(db) {
 
 }
 
+// Initialise the About screen and any app-specific text
+function doAboutScreen()
+{
+    var phoneGapUtils = new PhoneGapUtils();
+    var config = new Config();
+    phoneGapUtils.addAppText();
 
+    $('#about-para1').html($.i18n('about-para1', phoneGapUtils.getAppText('app-title'), phoneGapUtils.getAppText('app-location')));
+    $('#about-para2').html($.i18n('about-para2', phoneGapUtils.getAppText('app-title')));
+    $('#about-para3').html($.i18n('about-para3', phoneGapUtils.getAppText('app-title')));
+    $('#about-para4').html($.i18n('about-para4', phoneGapUtils.getAppText('app-title')));
+    $('#about-para5').html($.i18n('about-para5', phoneGapUtils.getAppText('app-title')));
+
+    $('#about-maplocation').html("<a href='#' onclick=\"window.open('" + config.mapLocation  + "', '_system')\">" + config.mapLocation +"</a>.")
+
+    $('#about-credits').html($.i18n('about-credits', phoneGapUtils.getAppText('app-title')));
+
+    $('#menu-about').html($.i18n('menu-about', phoneGapUtils.getAppText('app-title')));
+}
 
 // Device is ready (app loaded)
 function onDeviceReady() {
@@ -101,6 +119,7 @@ function onDeviceReady() {
                 });
 
                 $('body').i18n();
+                doAboutScreen();
             },
             function () {
                 // if there is an error getting the preferred language then default to English
@@ -109,6 +128,7 @@ function onDeviceReady() {
                 });
 
                 $('body').i18n();
+                doAboutScreen();
             }
             );
     })
@@ -136,12 +156,11 @@ $(document).ready(function () {
             });
 
             $('body').i18n();
-
+            doAboutScreen();
             
         })
 
-        var phoneGapUtils = new PhoneGapUtils();
-        phoneGapUtils.addAppText();
+       
 
     }
 });
