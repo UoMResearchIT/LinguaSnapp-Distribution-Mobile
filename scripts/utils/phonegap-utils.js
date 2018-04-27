@@ -23,7 +23,7 @@ var PhoneGapUtils = function () {
                 if (connectionState === Connection.NONE) {
 
 
-                    this.showAlert("You are not connected to the Internet");
+                    this.showAlert($.i18n('lingua-notconnected'));
 
                     deferred.reject();
                 }

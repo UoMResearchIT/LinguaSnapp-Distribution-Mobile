@@ -119,7 +119,7 @@ var Photo1Presentation = function (db) {
             var promise2 = self.photoRecord.getAllRecords();
             promise2.done(function (data) {
                 $.mobile.loading('show', {
-                    text: "Loading",
+                    text: $.i18n('lingua-loading'),
                     textVisible: true
 
                 });
@@ -171,7 +171,7 @@ var Photo1Presentation = function (db) {
                     var promise2 = self.photoRecord.getAllRecords();
                     promise2.done(function (data) {
                         $.mobile.loading('show', {
-                            text: "Saving",
+                            text: $.i18n('lingua-saving'),
                             textVisible: true
 
                         });
@@ -199,7 +199,7 @@ var Photo1Presentation = function (db) {
     this.deletePhoto = function (page_url) {
         var self = this;
 
-        self.phoneGapUtils.showConfirm("Are you sure you want to delete this photo?", function (buttonIndex) {
+        self.phoneGapUtils.showConfirm($.i18n('photo-deletesure'), function (buttonIndex) {
            
 
             if (buttonIndex === 1) { // Pressed OK
@@ -210,7 +210,7 @@ var Photo1Presentation = function (db) {
                 promise.done(function (data) {
 
                     $.mobile.loading('show', {
-                        text: "Deleting",
+                        text: $.i18n('photo-deleting'),
                         textVisible: true
 
                     });
@@ -248,7 +248,7 @@ var Photo1Presentation = function (db) {
 
         // In theory there should always be some selected options, but belt and braces...
         if (lang_id === "" && alpha_id === "" && translation === "") {
-            this.phoneGapUtils.showAlert("Please enter at least one of the language, alphabet and translation.");
+            this.phoneGapUtils.showAlert($.i18n('photo-enterlang'));
             
         }
         else {
@@ -276,16 +276,16 @@ var Photo1Presentation = function (db) {
 
         var translation_txt = translation;
         if (translation === "") {
-            translation_txt = "<em>None entered</em>";
+            translation_txt = "<em>" + $.i18n('photo-noneentered')+ "</em>";
         }
 
         $("#div_" + link_key).append("<div class='langListItem'>" +
                                         "<div style='width:90%; max-height: 100%; float:left; overflow: hidden'>" +
-                                        "<strong>Language:</strong>" + lang_text +
+                                        "<strong>" + $.i18n('photo-language') + ": </strong>" + lang_text +
                                         "<br/>" +
-                                        "<strong>Alphabet:</strong>" + alpha_text +
+                                        "<strong>" + $.i18n('photo-alphabet') + ": </strong>" + alpha_text +
                                         "<br/>" +
-                                        "<strong>Translation:</strong>" + translation_txt +
+                                        "<strong>" + $.i18n('photo-translation') + ": </strong>" + translation_txt +
                                         "</div>" +
                                         "<div style='width:10%; float:right'>" +
                                         "<input type='button' data-role='button' data-icon='delete' data-iconpos='notext' onclick='$(\"#div_" + link_key + "\").remove()' id='btn_" + link_key + "'></input>" +
@@ -302,7 +302,7 @@ var Photo1Presentation = function (db) {
     this.appendLanguageNone = function () {
         $("#divLangList").append("<div class='langListItem' id='divLangNone'>" +
                                        "<div style='width:100%; max-height: 100%; float:left; overflow: hidden'>" +
-                                       "No languages or translations have been entered for this photo so far." +
+                                       $.i18n('photo-nolang') +
                                        "</div>" +
                                       
                                        "</div>");

@@ -6,14 +6,14 @@
 var Config = function () {
 
     // This is the webservice location.
-    this.serverLocation = "https://api.linguasnapp.com";
-    
+    //this.serverLocation = "https://api.linguasnapp.com";
+    this.serverLocation = "http://webnet.humanities.manchester.ac.uk/LinguaSnapp"
 
     // This is the web application location (used on the about page)
     this.mapLocation = "http://www.linguasnapp.com";
 
     // The app version
-    this.appVersion = "1.0.0";
+    this.appVersion = "1.0.4";
 
     // App specific text, e.g. title etc
     this.appText = {

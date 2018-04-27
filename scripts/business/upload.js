@@ -50,15 +50,15 @@ var Upload = function (db) {
                 var payloadSize = Math.round(payload_str.length / 1024);
 
                 if (payloadSize === 0) {
-                    self.phoneGapUtils.showAlert("There are no pending photos to upload.");
+                    self.phoneGapUtils.showAlert($.i18n('upload-nophotos'));
                     deferred.resolve();
                 }
                 else {
-                    self.phoneGapUtils.showConfirm("These photos with their data are " + payloadSize + "KiB in size. Continue upload?", function (buttonIndex) {
+                    self.phoneGapUtils.showConfirm($.i18n('upload-nophotos', payloadSize), function (buttonIndex) {
                         if (buttonIndex === 1) { // User said OK to upload
 
                             $.mobile.loading('show', {
-                                text: "Uploading. Please wait.",
+                                text: $.i18n('upload-uploading'),
                                 textVisible: true
 
                             });
@@ -88,7 +88,7 @@ var Upload = function (db) {
 
                                 pfd = pfd.then(function () {
                                     // After all have been transmitted give a message and return.
-                                    self.phoneGapUtils.showAlert("Your upload has succeeded. Thank you.");
+                                    self.phoneGapUtils.showAlert($.i18n('upload-succeeded'));
                                     deferred.resolve();
                                 });
                                 dfd.resolve();
@@ -134,18 +134,18 @@ var Upload = function (db) {
             var payloadSize = Math.round(payload_str.length / 1024);
             // Check that the payload will have a valid address if it has no GPS values.
             if ((payload.latitude === 999 || payload.longitude === 999) && (payload.comments === null || payload.comments === "")) {
-                self.phoneGapUtils.showAlert("For this photo LinguaSnapp was unable to determine your location. Please enter the address in the comments box of the Context page.");
+                self.phoneGapUtils.showAlert($.i18n('upload-address'));
                 deferred.reject();
             }
             else {
 
 
 
-                self.phoneGapUtils.showConfirm("This photo with its data is " + payloadSize + "KiB in size. Continue upload?", function (buttonIndex) {
+                self.phoneGapUtils.showConfirm($.i18n('upload-nophotos', payloadSize), function (buttonIndex) {
 
                     if (buttonIndex === 1) { // User said OK to upload
                         $.mobile.loading('show', {
-                            text: "Uploading. Please wait.",
+                            text: $.i18n('upload-uploading'),
                             textVisible: true
 
                         });
@@ -162,7 +162,7 @@ var Upload = function (db) {
                             var up_prom = self.uploadPhoto(payload.unique_id, payload_str);
 
                             up_prom.done(function () {
-                                self.phoneGapUtils.showAlert("Your upload has succeeded. Thank you.");
+                                self.phoneGapUtils.showAlert($.i18n('upload-succeeded'));
                                 deferred.resolve();
                             });
 
@@ -234,7 +234,7 @@ var Upload = function (db) {
         // Error contacting servers (bad request?)
         upload_promise.fail(function () {
             $.mobile.loading('hide');
-            self.phoneGapUtils.showAlert("There has been an error contacting the LinguaSnapp servers. Please try again later.");
+            self.phoneGapUtils.showAlert($.i18n('lingua-servererror'));
             deferred.reject();
         });
 

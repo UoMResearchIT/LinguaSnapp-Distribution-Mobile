@@ -109,7 +109,7 @@ var Photo3Presentation = function (db) {
             var promise2 = self.photoRecord.getAllRecords();
             promise2.done(function (data) {
                 $.mobile.loading('show', {
-                    text: "Loading",
+                    text: $.i18n('lingua-loading'),
                     textVisible: true
 
                 });
@@ -196,7 +196,7 @@ var Photo3Presentation = function (db) {
                     var promise2 = self.photoRecord.getAllRecords();
                     promise2.done(function (data) {
                         $.mobile.loading('show', {
-                            text: "Saving",
+                            text: $.i18n('lingua-saving'),
                             textVisible: true
 
                         });
@@ -221,7 +221,7 @@ var Photo3Presentation = function (db) {
     this.deletePhoto = function (page_url) {
         var self = this;
 
-        self.phoneGapUtils.showConfirm("Are you sure you want to delete this photo?", function (buttonIndex) {
+        self.phoneGapUtils.showConfirm($.i18n('photo-deletesure'), function (buttonIndex) {
 
 
             if (buttonIndex === 1) { // Pressed OK
@@ -232,7 +232,7 @@ var Photo3Presentation = function (db) {
                 promise.done(function (data) {
 
                     $.mobile.loading('show', {
-                        text: "Deleting",
+                        text: $.i18n('photo-deleting'),
                         textVisible: true
 
                     });

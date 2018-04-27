@@ -90,6 +90,17 @@ function doAboutScreen()
     $('#menu-about').html($.i18n('menu-about', phoneGapUtils.getAppText('app-title')));
 }
 
+// Localise the validator messages
+function doValidatorMessages(lang)
+{
+    if (lang === "de") {
+        $.extend($.validator.messages, {
+            required: "Dieses Feld ist ein Pflichtfeld.",
+            maxlength: $.validator.format("Geben Sie bitte maximal {0} Zeichen ein.")
+        });
+    }
+}
+
 // Device is ready (app loaded)
 function onDeviceReady() {
 
@@ -120,6 +131,7 @@ function onDeviceReady() {
 
                 $('body').i18n();
                 doAboutScreen();
+                doValidatorMessages(lang);
             },
             function () {
                 // if there is an error getting the preferred language then default to English
@@ -157,6 +169,7 @@ $(document).ready(function () {
 
             $('body').i18n();
             doAboutScreen();
+            doValidatorMessages("de");
             
         })
 
