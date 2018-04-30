@@ -38,14 +38,14 @@ var PhotoRecord = function (db) {
 
                 promise.fail(function () {
                     // saving photo failed
-                    self.phoneGapUtils.showAlert("Saving the photo was not successful.");
+                    self.phoneGapUtils.showAlert($.i18n('photo-notsave'));
                     deferred.reject();
                 });
                 
             },
             function () {
                 // For some reason the photo failed.
-                self.phoneGapUtils.showAlert("The photo was not successful.");
+                self.phoneGapUtils.showAlert($.i18n('photo-notsuccess'));
                 deferred.reject();
             },
             {
@@ -66,7 +66,7 @@ var PhotoRecord = function (db) {
         else {
             if ($("#mobile").val() === "yes") {
                 // We can't access the camera
-                this.phoneGapUtils.showAlert("LinguaSnapp cannot access your camera.");
+                this.phoneGapUtils.showAlert($.i18n('photo-nocamera', self.phoneGapUtils.getAppText('app-title')));
                 deferred.reject();
             }
             else
@@ -82,7 +82,7 @@ var PhotoRecord = function (db) {
 
                 promise.fail(function () {
                     // saving photo failed
-                    self.phoneGapUtils.showAlert("Saving the photo was not successful.");
+                    self.phoneGapUtils.showAlert($.i18n('photo-notsave'));
                     deferred.reject();
                 });
             }
@@ -110,7 +110,7 @@ var PhotoRecord = function (db) {
         });
 
         gps_promise.fail(function (data) {
-            self.phoneGapUtils.showAlert("LinguaSnapp could not determine your location. Please enter the address in the Comments box on the photo's Context page.");
+            self.phoneGapUtils.showAlert($.i18n('photo-nolocation'));
         });
 
         gps_promise.always(function () {
@@ -381,13 +381,13 @@ var PhotoRecord = function (db) {
             });
 
             promise.fail(function () { // failed to get the photo record
-                self.phoneGapUtils.showAlert("There was a problem retrieving the photo record. Upload failed.");
+                self.phoneGapUtils.showAlert($.i18n('photo-recordproblem'));
                 deferred.reject();
             });
         });
 
         ID_promise.fail(function(){ // Unable to find user id
-            self.phoneGapUtils.showAlert("There was a problem retrieving your user ID. Upload failed.");
+            self.phoneGapUtils.showAlert($.i18n('photo-idproblem'));
             deferred.reject();
         });
 

@@ -269,14 +269,14 @@ var Photo3Presentation = function (db) {
             var oneLang = $.grep(data.descriptors, function (e) { return e.code === "ON"; });
             if (oneLang.length === 0 || oneLang[0].other_text === "no") {
                 $("#chkOneLang").prop('checked', false);
-                $("#chkOneLang").flipswitch().flipswitch('refresh');
+                $("#chkOneLang").flipswitch({ onText: $.i18n('lingua-yes'), offText: $.i18n('lingua-no') }).flipswitch('refresh');
                 $("#ddlDominance option:selected").removeAttr("selected");
                 $("#ddlDominance").selectmenu("refresh");
                 $("#divDominance").hide();
             }
             else {
                 $("#chkOneLang").prop('checked', true);
-                $("#chkOneLang").flipswitch().flipswitch('refresh');
+                $("#chkOneLang").flipswitch({ onText: $.i18n('lingua-yes'), offText: $.i18n('lingua-no') }).flipswitch('refresh');
                 $("#divDominance").show();
             }
 
@@ -387,6 +387,6 @@ var Photo3Presentation = function (db) {
         $("#ddlArrangement").empty();  // reset the arrangement drop down
         $("#ddlDominance").empty();  // reset the dominance drop down
         $("#chkOneLang").attr('checked', false);
-        $("#chkOneLang").flipswitch().flipswitch('refresh');
+        $("#chkOneLang").flipswitch({onText: $.i18n('lingua-yes'), offText:$.i18n('lingua-no')}).flipswitch('refresh');
     }
 }

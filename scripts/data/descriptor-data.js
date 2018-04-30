@@ -51,7 +51,7 @@ var DescriptorData = function (db) {
 
         }, function (e) {
             // Error in selecting version.
-            self.phoneGapUtils.showAlert('Error getting descriptor information.');
+            self.phoneGapUtils.showAlert($.i18n('db-errdescget'));
             deferred.reject();
         });
 
@@ -91,7 +91,7 @@ var DescriptorData = function (db) {
 
         }, function (e) {
             // Error in selecting version.
-            self.phoneGapUtils.showAlert('Error getting descriptor values.');
+            self.phoneGapUtils.showAlert($.i18n('db-errvalsget'));
             deferred.reject();
         });
 
@@ -116,7 +116,7 @@ var DescriptorData = function (db) {
 
             tx.executeSql(sql, [value_code], function (tx, res) {
                 if (res.rows.length === 0) {
-                    self.phoneGapUtils.showAlert('This descriptor value no longer exists.');
+                    self.phoneGapUtils.showAlert($.i18n('db-novalue'));
                     deferred.reject();
                 }
                 else {
@@ -135,7 +135,7 @@ var DescriptorData = function (db) {
 
         }, function (e) {
             // Error in selecting version.
-            self.phoneGapUtils.showAlert('Error getting descriptor value.');
+            self.phoneGapUtils.showAlert($.i18n('db-errvalget'));
             deferred.reject();
         });
 

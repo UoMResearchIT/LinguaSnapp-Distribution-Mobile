@@ -34,7 +34,7 @@ var PhotoRecordData = function (db) {
             tx.executeSql('INSERT INTO photorecords  (unique_id, image_data, latitude, longitude, date_created) SELECT ?, ?, ?, ?, ? WHERE NOT EXISTS(SELECT changes() AS change FROM config WHERE change <> 0);', [unique_id, imageData, latitude, longitude, nowDate]);
             deferred.resolve({ "unique_id": unique_id });
         }, function (e) {
-            self.phoneGapUtils.showAlert("Error inserting a new record into the photo table.");
+            self.phoneGapUtils.showAlert($.i18n('db-errnewphoto'));
             deferred.reject();
         });
 
@@ -55,7 +55,7 @@ var PhotoRecordData = function (db) {
             var retData;
             tx.executeSql('SELECT * FROM photorecords WHERE unique_id = ?', [unique_id], function (tx, res) {
                 if (res.rows.length === 0) {
-                    self.phoneGapUtils.showAlert('This photo no longer exists.');
+                    self.phoneGapUtils.showAlert($.i18n('db-errnophoto'));
                     deferred.reject();
                 }
                 else {
@@ -113,7 +113,7 @@ var PhotoRecordData = function (db) {
 
         }, function (e) {
             // Error in selecting version.
-            self.phoneGapUtils.showAlert('Error getting photo record.');
+            self.phoneGapUtils.showAlert($.i18n('db-errphotoget'));
             deferred.reject();
         });
         
@@ -139,7 +139,7 @@ var PhotoRecordData = function (db) {
                 // First update the title
                 tx.executeSql('UPDATE photorecords set title = ? WHERE unique_id = ? ', [form_data.title, unique_id]);
             }, function (e) {
-                self.phoneGapUtils.showAlert("Error updating photo record.");
+                self.phoneGapUtils.showAlert($.i18n('db-errphotoupdate'));
                 deferred.reject();
             });
 
@@ -213,7 +213,7 @@ var PhotoRecordData = function (db) {
                 // First update the comments
                 tx.executeSql('UPDATE photorecords set notes = ? WHERE unique_id = ? ', [form_data.comments, unique_id]);
             }, function (e) {
-                self.phoneGapUtils.showAlert("Error updating photo record.");
+                self.phoneGapUtils.showAlert($.i18n('db-errphotoupdate'));
                 deferred.reject();
             });
 
@@ -351,7 +351,7 @@ var PhotoRecordData = function (db) {
             deferred.resolve();
 
         }, function (e) {
-            self.phoneGapUtils.showAlert("Error deleting language/translation record.");
+            self.phoneGapUtils.showAlert($.i18n('db-errlangdelete'));
             deferred.reject();
         });
 
@@ -386,7 +386,7 @@ var PhotoRecordData = function (db) {
                 ret.resolve();
 
             }, function (e) {
-                self.phoneGapUtils.showAlert("Error updating descriptor record.");
+                self.phoneGapUtils.showAlert($.i18n('db-errdescupdate'));
                 ret.reject();
             });
         });
@@ -434,7 +434,7 @@ var PhotoRecordData = function (db) {
                     
 
                 }, function (e) {
-                    self.phoneGapUtils.showAlert("Error updating descriptor record.");
+                    self.phoneGapUtils.showAlert($.i18n('db-errdescupdate'));
                     ret.reject();
                 });
             });
@@ -463,7 +463,7 @@ var PhotoRecordData = function (db) {
 
             ret.resolve();
         }, function (e) {
-            self.phoneGapUtils.showAlert("Error updating translation record.");
+            self.phoneGapUtils.showAlert($.i18n('db-errtransupdate'));
             ret.reject();
         });
 
@@ -510,7 +510,7 @@ var PhotoRecordData = function (db) {
 
         }, function (error) {
             // Error in selecting version.
-            self.phoneGapUtils.showAlert('Error getting photo records.' + error.message);
+            self.phoneGapUtils.showAlert($.i18n('db-errphotosget') + error.message);
             deferred.reject();
         });
 
@@ -543,7 +543,7 @@ var PhotoRecordData = function (db) {
        
         promise.fail(function () {
             // Photo record was not found
-            self.phoneGapUtils.showAlert('Error deleting photo record.');
+            self.phoneGapUtils.showAlert($.i18n('db-errphotodelete'));
             deferred.reject();   
         });
 

@@ -29,7 +29,7 @@ var Descriptor = function (db) {
             var i;
             var retHTML = "";
             for (i = 0; i < data.length; i++) {
-                retHTML = retHTML + '<option value="' + data[i].value_code + '">' + data[i].value_name + '</option>';
+                retHTML = retHTML + '<option value="' + data[i].value_code + '">' + $.i18n(data[i].value_name) + '</option>';
             }
 
             

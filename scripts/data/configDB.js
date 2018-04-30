@@ -30,7 +30,7 @@ var ConfigDB = function (db) {
             tx.executeSql('INSERT INTO config (key, value) SELECT ?, ? WHERE NOT EXISTS(SELECT changes() AS change FROM config WHERE change <> 0);', [key, value]);
             deferred.resolve();
         }, function (e) {
-            self.phoneGapUtils.showAlert("Error updating config table: key - " + key);
+            self.phoneGapUtils.showAlert($.i18n('db-errconfig', key));
             deferred.reject();
         });
 
@@ -121,7 +121,7 @@ var ConfigDB = function (db) {
 
         }, function (e) {
             // Error in checking registration.
-            self.phoneGapUtils.showAlert('Error checking registered');
+            self.phoneGapUtils.showAlert($.i18n('db-errregcheck'));
             deferred.reject();
         });
 
@@ -170,7 +170,7 @@ var ConfigDB = function (db) {
 
         }, function (e) {
             // Error in checking registration.
-            self.phoneGapUtils.showAlert('Error checking for user ID');
+            self.phoneGapUtils.showAlert($.i18n('db-erridcheck'));
             deferred.reject();
         });
 

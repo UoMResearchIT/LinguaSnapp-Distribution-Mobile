@@ -13,7 +13,7 @@ var Config = function () {
     this.mapLocation = "http://www.linguasnapp.com";
 
     // The app version
-    this.appVersion = "1.0.4";
+    this.appVersion = "1.0.7";
 
     // App specific text, e.g. title etc
     this.appText = {
