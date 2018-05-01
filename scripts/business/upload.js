@@ -54,7 +54,7 @@ var Upload = function (db) {
                     deferred.resolve();
                 }
                 else {
-                    self.phoneGapUtils.showConfirm($.i18n('upload-nophotos', payloadSize), function (buttonIndex) {
+                    self.phoneGapUtils.showConfirm($.i18n('upload-size', payloadSize), function (buttonIndex) {
                         if (buttonIndex === 1) { // User said OK to upload
 
                             $.mobile.loading('show', {
@@ -141,7 +141,7 @@ var Upload = function (db) {
 
 
 
-                self.phoneGapUtils.showConfirm($.i18n('upload-nophotos', payloadSize), function (buttonIndex) {
+                self.phoneGapUtils.showConfirm($.i18n('upload-size', payloadSize), function (buttonIndex) {
 
                     if (buttonIndex === 1) { // User said OK to upload
                         $.mobile.loading('show', {

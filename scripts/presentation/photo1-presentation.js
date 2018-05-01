@@ -281,9 +281,9 @@ var Photo1Presentation = function (db) {
 
         $("#div_" + link_key).append("<div class='langListItem'>" +
                                         "<div style='width:90%; max-height: 100%; float:left; overflow: hidden'>" +
-                                        "<strong>" + $.i18n('photo-language') + ": </strong>" + lang_text +
+                                        "<strong>" + $.i18n('photo-language') + ": </strong>" + $.i18n(lang_text) +
                                         "<br/>" +
-                                        "<strong>" + $.i18n('photo-alphabet') + ": </strong>" + alpha_text +
+                                        "<strong>" + $.i18n('photo-alphabet') + ": </strong>" + $.i18n(alpha_text) +
                                         "<br/>" +
                                         "<strong>" + $.i18n('photo-translation') + ": </strong>" + translation_txt +
                                         "</div>" +

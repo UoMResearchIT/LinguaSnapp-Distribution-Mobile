@@ -6,20 +6,20 @@
 var Config = function () {
 
     // This is the webservice location.
-    //this.serverLocation = "https://api.linguasnapp.com";
-    this.serverLocation = "http://webnet.humanities.manchester.ac.uk/LinguaSnapp"
+    this.serverLocation = "https://api.linguasnapp.com";
+   
 
     // This is the web application location (used on the about page)
     this.mapLocation = "http://www.linguasnapp.com";
 
     // The app version
-    this.appVersion = "1.0.7";
+    this.appVersion = "1.0.0";
 
-    // App specific text, e.g. title etc
+    // App specific text, e.g. title etc. Explained in the installation instructions!
     this.appText = {
-        "app-title": "LinguaSnappHamburg",
-        "app-emailstudent": "Falls Du Studierende/r der Universität Hamburg bist und LinguaSnappHamburg im Rahmen einer Lehrveranstaltung nutzt, trage bitte Deine Uni-Email ein, damit wir Dich identifizieren können.",
-        "app-location": "Hamburg"
+        "app-title": "LinguaSnapp",
+        "app-emailstudent": "If you are a University of Manchester student and have been asked to use this app as part of your course unit then please enter your university email address to allow us to identify you for your group work.",
+        "app-location": "Manchester"
 
     }
 
