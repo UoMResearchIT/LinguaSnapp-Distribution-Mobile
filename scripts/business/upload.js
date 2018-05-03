@@ -212,6 +212,7 @@ var Upload = function (db) {
         upload_promise.done(function (data) {
             // LinguaSnapp error message returned
             if (data.Code >= 200 && data.Code <= 299) {
+                $.mobile.loading('hide');
                 self.phoneGapUtils.showAlert(data.Message);
                 deferred.reject();
             }

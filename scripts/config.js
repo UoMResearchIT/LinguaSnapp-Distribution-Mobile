@@ -6,8 +6,7 @@
 var Config = function () {
 
     // This is the webservice location.
-    this.serverLocation = "https://api.linguasnapp.com";
-   
+    this.serverLocation = "https://api.linguasnapp.com";   
 
     // This is the web application location (used on the about page)
     this.mapLocation = "http://www.linguasnapp.com";

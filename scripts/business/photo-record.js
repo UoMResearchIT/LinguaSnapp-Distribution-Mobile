@@ -110,7 +110,7 @@ var PhotoRecord = function (db) {
         });
 
         gps_promise.fail(function (data) {
-            self.phoneGapUtils.showAlert($.i18n('photo-nolocation'));
+            self.phoneGapUtils.showAlert($.i18n('photo-nolocation', self.phoneGapUtils.getAppText('app-title')));
         });
 
         gps_promise.always(function () {

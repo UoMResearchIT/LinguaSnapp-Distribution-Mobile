@@ -107,7 +107,7 @@ function onDeviceReady() {
 
 
     // iOS Statusbar
-    if (device.platform.toLowerCase === "ios") {
+    if (device.platform.toLowerCase() === "ios") {
         StatusBar.overlaysWebView(false);
         StatusBar.styleDefault();
     }

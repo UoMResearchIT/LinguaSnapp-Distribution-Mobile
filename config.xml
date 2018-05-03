@@ -2,7 +2,7 @@
 
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0.1"
-        id        = "com.linguasnapp"
+        id        = "uk.ac.manchester.linguasnappdist"
         version   = "1.0.0"
         ios-CFBundleVersion="1.0.0"
         versionCode = "1">
@@ -22,6 +22,17 @@
   <preference name="orientation" value="portrait" />
   <preference name="ios-statusbarstyle" value="black-opaque" /> 
   <preference name="target-device" value="handset" />
+  
+  <preference name="StatusBarOverlaysWebView" value="false" />
+  <preference name="StatusBarBackgroundColor" value="#165769" /> <!--Your color value will go here-->
+  <preference name="StatusBarStyle" value="lightcontent" />
+
+  <preference name="ShowSplashScreen" value="true" />
+  <preference name="SplashScreen" value="splash"/>
+  <preference name="SplashScreenDelay" value="3000"/>
+  <preference name="AutoHideSplashScreen" value="true" />
+  <preference name="SplashShowOnlyFirstTime" value="false" />
+  <preference name="FadeSplashScreen" value="false"/>
 
   <platform name="ios">
     <!-- iOS 8.0+ -->
@@ -58,7 +69,6 @@
     <icon src="images/icon/android/hdpi.png" density="hdpi" />
     <icon src="images/icon/android/xhdpi.png" density="xhdpi" />
   </platform>
-
 
   <platform name="android">
     <!-- you can use any density that exists in the Android project -->
