@@ -136,7 +136,7 @@ var Photo2Presentation = function (db) {
     this.changeIcon = function () {
        // alert("hello");
         $('.ui-popup .ui-header a, .ui-dialog .ui-header a').buttonMarkup({ icon: "check" });
-        $('.ui-popup .ui-header a, .ui-dialog .ui-header a').text("Select");
+        $('.ui-popup .ui-header a, .ui-dialog .ui-header a').text($.i18n('lingua-select'));
         $('.ui-popup .ui-header a, .ui-dialog .ui-header a').removeClass("ui-btn-icon-notext").addClass("ui-btn-icon-left");
     }
 

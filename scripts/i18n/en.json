@@ -44,6 +44,7 @@
   "lingua-notconnected": "You are not connected to the Internet",
   "lingua-yes": "Yes",
   "lingua-no": "No",
+  "lingua-select": "Select",
   "register-alreadyreg": ", if you have already registered.",
   "register-chooseusercode": "Choose a usercode (min. 5 chars):",
   "register-login": "log in",
