@@ -78,6 +78,10 @@
     <icon src="images/icon/android/hdpi.png" density="hdpi" />
     <icon src="images/icon/android/xhdpi.png" density="xhdpi" />
   </platform>
+        
+  <platform name="android">
+    <preference name="android-minSdkVersion" value="26" />
+  </platform>
 
   <platform name="android">
     <!-- you can use any density that exists in the Android project -->
