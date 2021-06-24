@@ -119,7 +119,8 @@
   <plugin name="cordova-sqlite-evcore-extbuild-free" version="0.9.7" source="npm" />
   <plugin name="cordova-plugin-device" version="2.0.2" source="npm" />
   <plugin name="cordova-plugin-network-information" version="2.0.1" source="npm"/>
-  <plugin name="cordova-plugin-camera" version="4.0.2" source="npm" />
+  <plugin name="cordova-plugin-camera" version="4.1.0" source="npm"/>
+  <plugin name="cordova-plugin-ios-camera-permissions" />
   <plugin name="cordova-plugin-geolocation" version="4.0.1" source="npm" />
   <plugin name="cordova-plugin-dialogs" version="2.0.1" source="npm" />
   <plugin name="cordova-plugin-statusbar" version="2.4.2" source="npm" />
@@ -138,15 +139,21 @@
   
   <feature name="Camera">
     <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    <param name="ios-package" value="CDVCamera" />
   </feature>
   
   <feature name="Geolocation">
       <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
   </feature>
-  
-   <feature name="StatusBar">
-            <param name="ios-package" value="CDVStatusBar" onload="true" />
-        </feature>
-  
+
+  <feature name="StatusBar">
+    <param name="ios-package" value="CDVStatusBar" onload="true" />
+  </feature>
+
+  <platform name="ios">
+    <gap:config-file overwrite="true" parent="NSLocationWhenInUseUsageDescription" platform="ios">
+        <string>need location access to tag the location of your photos</string>
+    </gap:config-file>
+  </platform>
 
 </widget>
