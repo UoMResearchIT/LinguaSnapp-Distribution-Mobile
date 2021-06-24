@@ -1,0 +1,9 @@
+# Tab-separated file which defines the API end points
+# Type values must map to the "ServerEnpointType" enumeration in the code
+# Type 0 represents the base URL (ending in "/") with other types representing extensions to this base URL
+Type	URL
+0	https://api.linguasnapp.com
+1	api/register
+2	api/login
+3	api/upload
+4	api/confirmconfig

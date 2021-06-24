@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LinguaSnapp.Views.ContentViews.Acknowledgement">
+    <ContentView.Content>
+        <StackLayout>
+            <Image Source="ic_uom"
+                   HeightRequest="48"
+                   Aspect="AspectFit" />
+            <Label Text="{StaticResource uom_rit}"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Small" />
+            <Label Text="{Binding VersionText}"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Small" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

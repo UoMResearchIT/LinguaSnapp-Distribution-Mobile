@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             xmlns:vm="clr-namespace:LinguaSnapp.ViewModels"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="LinguaSnapp.Views.UploadsPage"
+             Title="{StaticResource title_uploads}"
+             Shell.NavBarIsVisible="False"
+             Visual="Material"
+             BackgroundColor="White">
+    <ContentPage.BindingContext>
+        <vm:UploadsViewModel x:Name="PageViewModel" />        
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto, *"
+              RowSpacing="0"
+              xct:SafeAreaEffect.SafeArea="false,false,false,true">
+            <cv:DynamicHeader BindingContext="{Binding HeaderViewModel}" />
+            <ListView Grid.Row="1"
+                      SeparatorVisibility="None"
+                      HasUnevenRows="True"
+                      SelectionMode="None"
+                      ItemsSource="{Binding SubmissionList}"
+                      IsGroupingEnabled="True"
+                      BackgroundColor="White">
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell ios:Cell.DefaultBackgroundColor="White">
+                            <StackLayout>
+                                <Frame Padding="0"
+                                       BackgroundColor="{StaticResource Primary}">
+                                    <Label Text="{Binding LongName}"
+                                           HorizontalTextAlignment="Center"
+                                           FontSize="Large"
+                                           TextColor="{StaticResource Secondary}" />
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <cv:SubmissionCard />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Grid.Row="1"
+                   Text="{StaticResource uploads_none}"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   IsVisible="{Binding NoneLabelVisible}" />
+            <cv:IconLabelButton Grid.Row="1"
+                                HorizontalOptions="Center"
+                                VerticalOptions="End"
+                                BindingContext="{Binding UploadAllButton}">
+                <cv:IconLabelButton.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <OnPlatform.Platforms>
+                            <On Platform="iOS" Value="0, 0, 0, 56" />
+                            <On Platform="Android" Value="0, 0, 0, 8" />
+                        </OnPlatform.Platforms>
+                    </OnPlatform>
+                </cv:IconLabelButton.Margin>
+                </cv:IconLabelButton>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

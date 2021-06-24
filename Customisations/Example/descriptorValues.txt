@@ -1,0 +1,176 @@
+# Tab-separated file used to populate the dropdown box options
+# NB: The DescriptorType must match the DescriptorType enumeration in the code
+DescriptorType	Code	Name
+1	LA001	English
+1	LA002	Urdu
+1	LA003	Arabic
+1	LA004	Chinese
+1	LA005	Amharic
+1	LA006	Bengali
+1	LA007	Bosnian/Croatian
+1	LA008	French
+1	LA009	Gujarati
+1	LA010	Greek
+1	LA011	Hebrew
+1	LA012	Hindi
+1	LA013	Italian
+1	LA014	Japanese
+1	LA015	Korean
+1	LA016	Kurdish (Kurmanji)
+1	LA017	Kurdish (Sorani)
+1	LA018	Latvian
+1	LA019	Lithuanian
+1	LA020	Malay
+1	LA021	Malayalam
+1	LA022	Pashto
+1	LA023	Persian (Farsi)
+1	LA024	Polish
+1	LA025	Punjabi
+1	LA026	Romanian
+1	LA027	Russian
+1	LA028	Somali
+1	LA029	Spanish
+1	LA030	Tamil
+1	LA031	Tigrinya
+1	LA032	Ukrainian
+1	LA033	Vietnamese
+1	LA034	Turkish
+1	LA035	Yiddish
+1	LA036	Welsh
+1	LA037	Scottish Gallic
+1	LA038	Gaelic (Irish)
+1	LA039	Manx
+1	LA040	Cornish
+1	LA041	Armenian
+1	LA042	Bulgarian
+1	LA043	Czech
+1	LA044	Dutch
+1	LA045	Hungarian
+1	LA046	Mongolian
+1	LA047	Nepali
+1	LA048	Portuguese
+1	LA049	Serbian
+1	LA050	Sinhala
+1	LA051	Slovak
+1	LA052	Slovenian
+1	LA053	Swahili
+1	LA054	Thai
+1	LA055	Tagalog
+1	LAOTHER	Other
+2	AL001	Roman (Latin)
+2	AL002	Persian-Arabic
+2	AL003	Chinese
+2	AL004	Bengali
+2	AL005	Devangari
+2	AL006	Gujarati
+2	AL007	Punjabi
+2	AL008	Cyrillic
+2	AL009	Greek
+2	AL010	Hebrew
+2	AL011	Ge'ez
+2	AL012	Korean
+2	AL013	Japanese
+2	AL014	Tamil
+2	AL015	Thai
+2	AL016	Armenian
+2	ALOTHER	Other
+3	PO001	Building: Outdoors
+3	PO002	Building: Indoors
+3	PO003	Market Stall
+3	PO004	Signpost/billboard/sandwichboard
+3	PO005	Mobile: external (car, taxi, bus etc)
+3	PO006	Mobile: internal (bus, tram etc)
+3	PO007	Letterbox
+3	PO008	Doorbell
+3	PO009	Other (lamppost, wall, bin etc)
+4	SI001	Printed sign
+4	SI002	Printed poster
+4	SI003	Printed leaflet
+4	SI004	Printed label
+4	SI005	Handwritten note (unique)
+4	SI006	Handwritten leaflet/poster (photography)
+4	SI007	Electronic sign
+4	SI008	Graffiti
+5	OU001	Residential
+5	OU002	Restaurant
+5	OU003	Fast food/take away
+5	OU004	Grocery/corner shop
+5	OU005	Bakery/butcher
+5	OU006	General food/supermarket/minimarket
+5	OU007	Cafe/pub/bar/shisha bar
+5	OU008	Community centre/cultural centre
+5	OU009	Religious institution
+5	OU010	Hairdresser/beauty salon/cosmetics
+5	OU011	Jewellery
+5	OU012	Souvenirs
+5	OU013	Tailor
+5	OU014	Clothing
+5	OU015	Stationary
+5	OU016	Laundrette
+5	OU017	Hardware/tools/gardening
+5	OU018	Bookshop
+5	OU019	PC/electronics/mobile phone shop
+5	OU020	Travel agent/cargo agent
+5	OU021	Money transfer agent
+5	OU022	Estate agent
+5	OU023	Pharmacy
+5	OU024	Lawyer/notary
+5	OU025	Accountant
+5	OU026	Doctor/dentist/clinic
+5	OU027	Car dealer/workshop/garage
+5	OU028	Petrol station
+5	OU029	Bank
+5	OU030	Post Office
+5	OU031	Government Office
+5	OU032	Company Office (insurance etc)
+5	OU033	Street sign
+5	OU034	Traffic (road) sign/access instruction etc
+5	OU035	Public transport station (bus, train, tram)
+5	OU036	Public transport vehicle (bus, train, tram)
+5	OU037	Airport/harbour
+5	OU038	Hospital
+5	OU039	School
+5	OU040	Preschool/nursery
+5	OU041	Museum
+5	OU042	Library
+5	OU043	Sports/leisure centre
+5	OU044	University
+5	OU045	ATM
+5	OU046	Parking meter
+5	OU047	Billboard
+5	OUOTHER	Other
+6	DE001	Icon/logo
+6	DE002	Product image/Service image
+6	DE003	Accompanying image
+7	CO001	Outlet name/institution name/personal name
+7	CO002	Location name/street name
+7	CO003	Outlet information (opening times etc)
+7	CO004	Product brand name
+7	CO005	Service brand name
+7	CO006	Product information
+7	CO007	Service information
+7	CO008	Safety/health instruction
+7	CO009	Event information
+7	CO010	Religious message/political message
+7	CO011	Personal message
+7	CO012	Other non-commercial information
+8	SE001	Public
+8	SE002	Private
+8	SE003	Voluntary
+9	AU001	Exclusive
+9	AU002	Inclusive
+10	PU001	Communicative
+10	PU002	Emblematic
+11	FU001	Landmark
+11	FU002	Recruitment/information
+11	FU003	Public statement
+11	FU004	Muted
+12	AR001	Duplicating
+12	AR002	Fragmentary
+12	AR003	Overlapping
+12	AR004	Complementary
+13	DO001	Position
+13	DO002	Font size
+13	DO003	Colour
+13	DO004	Other
+13	DO005	Quantity

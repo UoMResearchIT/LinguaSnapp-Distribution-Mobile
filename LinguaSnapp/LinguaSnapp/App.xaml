@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ctrl="clr-namespace:LinguaSnapp.Controls"
+             xmlns:mdsres="clr-namespace:MDS.Essentials.Shared.Resources;assembly=MDS.Essentials"
+             xmlns:res="clr-namespace:LinguaSnapp.Resources"
+             x:Class="LinguaSnapp.App">
+    <Application.Resources>
+
+        <!-- Common Resources -->
+        <ResourceDictionary>
+
+            <!-- External Resources -->
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Essentials -->
+                <mdsres:CommonRes />
+                <!-- Flavour Resources -->
+                <res:AppResources />
+            </ResourceDictionary.MergedDictionaries>
+            
+            <!-- Standard Colours -->
+            <Color x:Key="BackgroundDark">#262626</Color>
+            <Color x:Key="ForegroundDark">#565656</Color>
+
+            <!-- Fonts -->
+            <x:String x:Key="font_open_sans">OpenSans</x:String>
+            <x:String x:Key="font_open_sans_semibold">OpenSansSemiBold</x:String>
+
+            <!-- Messages -->
+            <x:String x:Key="msg_register_tapped">msg_register_tapped</x:String>
+            <x:String x:Key="msg_login_tapped">msg_login_tapped</x:String>
+            <x:String x:Key="msg_translation_delete">msg_translation_delete</x:String>
+            <x:String x:Key="msg_translation_add">msg_translation_add</x:String>
+            <x:String x:Key="msg_renderer_picker_clicked">msg_renderer_picker_clicked</x:String>
+            <x:String x:Key="msg_update_submission_from_vm">msg_update_submission_from_vm</x:String>
+            <x:String x:Key="msg_scroll_trans_cards">msg_scroll_trans_cards</x:String>
+
+            <!-- Preferences / Secure Storage Keys -->
+            <x:String x:Key="key_config_database_version">key_config_database_version</x:String>
+            <x:String x:Key="key_guid">key_guid</x:String>
+            <x:String x:Key="key_num_sent">key_num_sent</x:String>
+            <x:String x:Key="key_user_id">ss_user_id</x:String>
+            <x:String x:Key="key_device_id">ss_device_id</x:String>
+
+            <!-- Styles -->
+
+            <!-- Labels -->
+            <Style TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="Body" />
+                <Setter Property="FontFamily"
+                        Value="{StaticResource font_open_sans}" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource ForegroundDark}" />
+            </Style>
+
+            <!-- Spans -->
+            <Style x:Key="span_weblink"
+                   TargetType="Span">
+                <Setter Property="TextColor"
+                        Value="MediumBlue" />
+                <Setter Property="TextDecorations"
+                        Value="Underline" />
+                <Setter Property="FontSize"
+                        Value="Body" />
+                <Setter Property="FontFamily"
+                        Value="{StaticResource font_open_sans}" />
+            </Style>
+
+            <!-- Stacks -->
+            <Style TargetType="StackLayout">
+                <Setter Property="Margin"
+                        Value="10, 0, 10, 0" />
+                <Setter Property="Padding"
+                        Value="0, 10, 0, 10" />
+                <Setter Property="VerticalOptions"
+                        Value="Center" />
+            </Style>
+
+            <!-- Buttons -->
+            <Style TargetType="Button">
+                <Setter Property="TextColor"
+                        Value="White"></Setter>
+                <Setter Property="FontFamily"
+                        Value="{StaticResource font_open_sans_semibold}" />
+                <Setter Property="Visual"
+                        Value="Default" />
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                                            Value="{StaticResource Primary}" />
+                                    <Setter Property="TextColor"
+                                            Value="{StaticResource Secondary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                                            Value="{StaticResource Tertiary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <Style TargetType="Image">
+                <Setter Property="Aspect"
+                        Value="AspectFit" />
+                <Setter Property="HeightRequest"
+                        Value="48" />
+            </Style>
+
+            <Style TargetType="ctrl:EntryWithValidity">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource Tertiary}" />
+                <Setter Property="FontFamily"
+                        Value="{StaticResource font_open_sans}" />
+            </Style>
+
+            <Style TargetType="ctrl:MultiPickPicker">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource Tertiary}" />
+            </Style>
+
+            <Style TargetType="ctrl:PickerWithValidity">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource Tertiary}" />
+                <Setter Property="FontFamily"
+                        Value="{StaticResource font_open_sans}" />
+            </Style>
+
+            <Style TargetType="ctrl:EditorWithValidity">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource Tertiary}" />
+                <Setter Property="FontFamily"
+                        Value="{StaticResource font_open_sans}" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource Tertiary}" />
+                <Setter Property="PlaceholderColor"
+                        Value="{StaticResource ForegroundDark}" />
+                <Setter Property="FontFamily"
+                        Value="{StaticResource font_open_sans}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

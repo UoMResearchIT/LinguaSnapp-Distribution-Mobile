@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:LinguaSnapp.Views"
+       Title="LinguaSnapp"
+       x:Class="LinguaSnapp.AppShellEditor">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle"
+                   TargetType="Element">
+                <Setter Property="Shell.BackgroundColor"
+                        Value="{StaticResource Primary}" />
+                <Setter Property="Shell.ForegroundColor"
+                        Value="{StaticResource Secondary}" />
+                <Setter Property="Shell.TitleColor"
+                        Value="{StaticResource Secondary}" />
+                <Setter Property="Shell.DisabledColor"
+                        Value="{StaticResource Unselected}" />
+                <Setter Property="Shell.UnselectedColor"
+                        Value="{StaticResource Unselected}" />
+                <Setter Property="Shell.TabBarBackgroundColor"
+                        Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarForegroundColor"
+                        Value="{StaticResource Secondary}" />
+                <Setter Property="Shell.TabBarUnselectedColor"
+                        Value="{StaticResource Unselected}" />
+                <Setter Property="Shell.TabBarTitleColor"
+                        Value="{StaticResource Secondary}" />
+            </Style>
+            <Style TargetType="TabBar"
+                   BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem"
+                   BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <Tab Title="{StaticResource title_language}"
+             FlyoutIcon="ic_language_white"
+             Icon="ic_language_white">
+            <ShellContent ContentTemplate="{DataTemplate local:LanguagePage}" />
+        </Tab>
+        <Tab Title="{StaticResource title_context}"
+             FlyoutIcon="ic_context_white"
+             Icon="ic_context_white">
+            <ShellContent ContentTemplate="{DataTemplate local:ContextPage}" />
+        </Tab>
+        <Tab Title="{StaticResource title_analysis}"
+             FlyoutIcon="ic_analysis_white"
+             Icon="ic_analysis_white">
+            <ShellContent ContentTemplate="{DataTemplate local:AnalysisPage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>

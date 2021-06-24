@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LinguaSnapp.Views.AboutPage"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             xmlns:vm="clr-namespace:LinguaSnapp.ViewModels"
+             Title="{StaticResource title_about}"
+             Shell.NavBarIsVisible="False"
+             Visual="Material"
+             BackgroundColor="White">
+    <ContentPage.BindingContext>
+        <vm:AboutPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto, *"
+              RowSpacing="0">
+            <cv:DynamicHeader BindingContext="{Binding HeaderViewModel}" />
+            <cv:InfoContent Grid.Row="1"
+                            ShowInfoButtonBar="True">
+                <x:Arguments>
+                    <x:String>Resources.about.html</x:String>
+                </x:Arguments>
+            </cv:InfoContent>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

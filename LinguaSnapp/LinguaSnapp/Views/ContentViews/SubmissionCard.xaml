@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             xmlns:ve="clr-namespace:MDS.Essentials.Shared.ViewExtensions;assembly=MDS.Essentials"
+             x:Class="LinguaSnapp.Views.ContentViews.SubmissionCard">
+    <ContentView.Content>
+        <ve:FrameWithElevation BackgroundColor="{StaticResource Tertiary}"
+                               Margin="10">
+            <Grid ColumnDefinitions="Auto, *, Auto">
+                <Image Source="{Binding ThumbnailImageSource}"
+                       HeightRequest="96"
+                       WidthRequest="96"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill">
+                    <Image.Clip>
+                        <RoundRectangleGeometry CornerRadius="5"
+                                                Rect="0, 0, 96, 96" />
+                    </Image.Clip>
+                </Image>
+                <StackLayout Margin="10"
+                             Padding="0"
+                             Grid.Column="1">
+                    <Label Text="{Binding Title}" />
+                    <Label Text="{Binding Date}" />
+                    <Label Text="{Binding Size}" />
+                    <Label Text="{Binding Status}"
+                           TextColor="{Binding StatusColour}" />
+                </StackLayout>
+                <cv:IconLabelButton x:Name="EditIcon"
+                                    Grid.Column="2"
+                                    BindingContext="{Binding EditIconViewModel}" />
+            </Grid>
+        </ve:FrameWithElevation>
+    </ContentView.Content>
+</ContentView>

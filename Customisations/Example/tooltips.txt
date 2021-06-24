@@ -1,0 +1,18 @@
+# Tab-separated file which defines the tooltips on the analysis page
+# NB: The DescriptorId must match the TooltipType enumeration in the code
+DescriptorId	Keyword	Text
+1	Public	Government or public agency; top-down
+1	Private	Individual, commercial; bottom-up
+1	Voluntary	Third sector, community group; meso-level
+2	Exclusive	Message singles out particular target population
+2	Inclusive	Makes message accessible to wider target populations
+3	Communicative	Provides content information
+3	Emblematic	Attracts emotional identification
+4	Landmark	Identifies location in relation to history, tradition, customs
+4	Recruitment	Engages audience with the agent
+4	Public Statement	Seeks to influence opinion
+4	Muted	Has only accidental value, not intended to relate to specific location (e.g. displaced label)
+5	Duplicating	Repetition of same content
+5	Fragmentary	Translation of selected parts
+5	Overlapping	Repetition of overall message with different content elements
+5	Complementary	Different languages for different aspects of message content

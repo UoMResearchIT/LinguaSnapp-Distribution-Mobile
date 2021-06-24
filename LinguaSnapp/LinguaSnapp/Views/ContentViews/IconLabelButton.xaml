@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ve="clr-namespace:MDS.Essentials.Shared.ViewExtensions;assembly=MDS.Essentials"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:ef="clr-namespace:LinguaSnapp.Effects"
+             x:Class="LinguaSnapp.Views.ContentViews.IconLabelButton"
+             IsVisible="{Binding IconVisible}">
+    <ContentView.Content>
+        <ve:FrameWithElevation CornerRadius="{Binding IconCornerRadius}"
+                               WidthRequest="{Binding IconSize}"
+                               HeightRequest="{Binding IconSize}"
+                               Padding="0"
+                               BackgroundColor="{Binding IconBackgroundColour}"
+                               BorderColor="{Binding IconBorderColour}"
+                               HasShadow="{Binding HasShadow}"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Elevation="5"
+                               Margin="5">
+            <Grid RowDefinitions="*, Auto"
+                  RowSpacing="0"
+                  Padding="{Binding IconPadding}"
+                  Margin="0">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Grid.GestureRecognizers>
+                <Image Source="{Binding ImageSource}"
+                       AutomationProperties.IsInAccessibleTree="True"
+                       AutomationProperties.Name="{Binding LabelText}"
+                       Aspect="AspectFit"
+                       xct:IconTintColorEffect.TintColor="{Binding LabelColour}" />
+                <Label Text="{Binding LabelText}"
+                       AutomationProperties.IsInAccessibleTree="True"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"
+                       MaxLines="1"
+                       TextColor="{Binding LabelColour}"
+                       FontSize="{Binding LabelSize}"
+                       IsVisible="{Binding LabelVisible}"
+                       Grid.Row="1"
+                       VerticalOptions="End">
+                    <Label.Effects>
+                        <ef:AutoSizeLabelEffect />
+                    </Label.Effects>
+                </Label>
+            </Grid>
+        </ve:FrameWithElevation>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             xmlns:vm="clr-namespace:LinguaSnapp.ViewModels"
+             xmlns:ctrl="clr-namespace:LinguaSnapp.Controls"
+             x:Class="LinguaSnapp.Views.ContextPage"
+             Shell.NavBarIsVisible="False"
+             Visual="Material"
+             BackgroundColor="White">
+    <ContentPage.BindingContext>
+        <vm:ContextPageViewModel x:Name="PageViewModel" />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto, *"
+              RowSpacing="0">
+            <cv:EditorButtonBar />
+            <ScrollView Grid.Row="1">
+                <StackLayout VerticalOptions="Start">
+                    <Frame Padding="0"
+                           Margin="10"
+                           HorizontalOptions="Center">
+                        <Image Source="{Binding PreviewImage}"
+                               HeightRequest="256"
+                               Aspect="AspectFit"
+                               Margin="0" />
+                    </Frame>
+                    <cv:PickerView BindingContext="{Binding PositionPickerViewModel}" />
+                    <cv:PickerView BindingContext="{Binding SignTypePickerViewModel}" />
+                    <cv:PickerView BindingContext="{Binding OutletPickerViewModel}" />
+                    <cv:EditorView BindingContext="{Binding OtherEntryViewModel}"
+                                   IsVisible="{Binding OutletPickerViewModel.OtherVisible, Source={x:Reference PageViewModel}}" />
+                    <cv:MultiPickerView BindingContext="{Binding ContentMultiPickViewModel}" />
+                    <cv:MultiPickerView BindingContext="{Binding DesignMultiPickViewModel}" />
+                    <cv:EditorView BindingContext="{Binding CommentsViewModel}" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

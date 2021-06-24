@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             x:Class="LinguaSnapp.Views.ContentViews.InfoContent">
+  <ContentView.Content>
+        <ScrollView>
+            <StackLayout x:Name="InfoStack">
+                <cv:Acknowledgement Margin="0, 10, 0, 10" />
+                <cv:InfoButtonBar x:Name="InfoBar" />
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

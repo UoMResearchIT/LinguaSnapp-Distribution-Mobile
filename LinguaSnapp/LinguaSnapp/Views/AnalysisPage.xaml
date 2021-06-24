@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             xmlns:vm="clr-namespace:LinguaSnapp.ViewModels"
+             xmlns:cn="clr-namespace:LinguaSnapp.Converters"
+             x:Class="LinguaSnapp.Views.AnalysisPage"
+             Shell.NavBarIsVisible="False"
+             Visual="Material"
+             BackgroundColor="White">
+    <ContentPage.BindingContext>
+        <vm:AnalysisPageViewModel x:Name="PageViewModel" />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <cn:BoolInverter x:Key="boolInv" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto, *"
+              RowSpacing="0">
+            <cv:EditorButtonBar />
+            <ScrollView Grid.Row="1">
+                <StackLayout VerticalOptions="Start">
+                    <Frame Padding="0"
+                           Margin="10"
+                           HorizontalOptions="Center">
+                        <Image Source="{Binding PreviewImage}"
+                               HeightRequest="256"
+                               Aspect="AspectFit"
+                               Margin="0" />
+                    </Frame>
+                    <cv:PickerView BindingContext="{Binding SectorPickerViewModel}" />
+                    <cv:PickerView BindingContext="{Binding AudiencePickerViewModel}" />
+                    <cv:MultiPickerView BindingContext="{Binding PurposePickerViewModel}" />
+                    <cv:MultiPickerView BindingContext="{Binding ArrangementPickerViewModel}" />
+                    <cv:MultiPickerView BindingContext="{Binding FunctionPickerViewModel}" />
+                    <cv:MultiPickerView BindingContext="{Binding DominancePickerViewModel}"
+                                        IsVisible="{Binding OneLanguageDominant, Source={x:Reference PageViewModel}}" />
+                    <Grid ColumnDefinitions="Auto, Auto"
+                          HorizontalOptions="Center"
+                          IsEnabled="{Binding IsReadOnly, Converter={StaticResource boolInv}}">
+                        <CheckBox IsChecked="{Binding OneLanguageDominant}"
+                                  VerticalOptions="Center"
+                                  Color="{StaticResource PrimaryLightBackground}" />
+                        <Label Grid.Column="1"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center"
+                               Text="{StaticResource analysis_dominance_check}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding DominanceLabelTapped}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

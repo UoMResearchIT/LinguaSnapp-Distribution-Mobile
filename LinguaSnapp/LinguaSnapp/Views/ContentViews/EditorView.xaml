@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             xmlns:ctrl="clr-namespace:LinguaSnapp.Controls"
+             x:Class="LinguaSnapp.Views.ContentViews.EditorView">
+    <ContentView.Content>
+        <Grid ColumnDefinitions="*, Auto, Auto"
+              ColumnSpacing="0">
+            <ctrl:EditorWithValidity Text="{Binding EntryText}"
+                                     Placeholder="{Binding Placeholder}"
+                                     AutoSize="TextChanges"
+                                     IsReadOnly="{Binding IsReadOnly}"
+                                     CheckHasValue="{Binding CheckHasValue}"
+                                     IsValid="{Binding IsValid}" />
+            <cv:IconLabelButton Grid.Column="1"
+                                BindingContext="{Binding ClearButtonViewModel}" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>
