@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             mc:Ignorable="d"
+             x:Class="LinguaSnapp.Views.ModalContainer"
+             Visual="Material"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <Grid x:Name="ContainerGrid"
+              RowDefinitions="Auto, *"
+              RowSpacing="0">
+            <cv:DynamicHeader BindingContext="{Binding HeaderViewModel}" />
+
+            <!-- Content in grid row 1 is added programmatically -->
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             xmlns:ctrl="clr-namespace:LinguaSnapp.Controls"
+             x:Class="LinguaSnapp.Views.ContentViews.EntryView">
+    <ContentView.Content>
+        <Grid ColumnDefinitions="*, Auto, Auto"
+              ColumnSpacing="0">
+            <ctrl:EntryWithValidity Text="{Binding EntryText}"
+                                    Placeholder="{Binding Placeholder}"
+                                    Keyboard="{Binding Keyboard}"
+                                    IsReadOnly="{Binding IsReadOnly}"
+                                    IsValid="{Binding IsValid}"
+                                    CheckHasValue="{Binding CheckHasValue}"
+                                    CheckPositiveInteger="{Binding CheckPositiveInteger}" />
+            <cv:IconLabelButton Grid.Column="1"
+                                BindingContext="{Binding ClearButtonViewModel}" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

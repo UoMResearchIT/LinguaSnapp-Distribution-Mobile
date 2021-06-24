@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:LinguaSnapp.Views"
+       Title="LinguaSnapp"
+       x:Class="LinguaSnapp.AppShellHome">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle"
+                   TargetType="Element">
+                <Setter Property="Shell.BackgroundColor"
+                        Value="{StaticResource Primary}" />
+                <Setter Property="Shell.ForegroundColor"
+                        Value="{StaticResource Secondary}" />
+                <Setter Property="Shell.TitleColor"
+                        Value="{StaticResource Secondary}" />
+                <Setter Property="Shell.DisabledColor"
+                        Value="{StaticResource Unselected}" />
+                <Setter Property="Shell.UnselectedColor"
+                        Value="{StaticResource Unselected}" />
+                <Setter Property="Shell.TabBarBackgroundColor"
+                        Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarForegroundColor"
+                        Value="{StaticResource Secondary}" />
+                <Setter Property="Shell.TabBarUnselectedColor"
+                        Value="{StaticResource Unselected}" />
+                <Setter Property="Shell.TabBarTitleColor"
+                        Value="{StaticResource Secondary}" />
+            </Style>
+            <Style TargetType="TabBar"
+                   BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem"
+                   BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <Tab Route="route_home"
+             Title="{StaticResource title_home}"
+             FlyoutIcon="ic_home_white"
+             Icon="ic_home_white">
+            <ShellContent ContentTemplate="{DataTemplate local:HomePage}" />
+        </Tab>
+        <Tab Route="route_uploads"
+             Title="{StaticResource title_uploads}"
+             FlyoutIcon="ic_upload_white"
+             Icon="ic_upload_white">
+            <ShellContent ContentTemplate="{DataTemplate local:UploadsPage}" />
+        </Tab>
+        <Tab Route="route_about"
+             Title="{StaticResource title_about}"
+             FlyoutIcon="ic_icon_white"
+             Icon="ic_icon_white">
+            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>

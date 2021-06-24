@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             xmlns:ve="clr-namespace:MDS.Essentials.Shared.ViewExtensions;assembly=MDS.Essentials"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="LinguaSnapp.Views.ContentViews.EditorButtonBar">
+    <ContentView.Content>
+        <ve:FrameWithElevation CornerRadius="0"
+                               Padding="5"
+                               BackgroundColor="{StaticResource Primary}">
+            <Grid ColumnDefinitions="*,*,*,*"
+                  xct:SafeAreaEffect.SafeArea="false,true,false,false">
+                <cv:IconLabelButton BindingContext="{Binding CancelButtonViewModel}" />
+                <cv:IconLabelButton Grid.Column="1"
+                                    BindingContext="{Binding SaveButtonViewModel}" />
+                <cv:IconLabelButton Grid.Column="2"
+                                    BindingContext="{Binding UploadButtonViewModel}" />
+                <cv:IconLabelButton Grid.Column="3"
+                                    BindingContext="{Binding DeleteButtonViewModel}" />
+            </Grid>
+        </ve:FrameWithElevation>
+    </ContentView.Content>
+</ContentView>

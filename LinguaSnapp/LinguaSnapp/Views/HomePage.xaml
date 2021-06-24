@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:LinguaSnapp.ViewModels"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             x:Class="LinguaSnapp.Views.HomePage"
+             Title="{StaticResource title_home}"
+             Shell.NavBarIsVisible="False"
+             Visual="Material"
+             BackgroundColor="White">
+    <ContentPage.BindingContext>
+        <vm:HomePageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto, *"
+              RowSpacing="0">
+            <cv:DynamicHeader BindingContext="{Binding HeaderViewModel}" />
+            <ScrollView Grid.Row="1">
+                <StackLayout VerticalOptions="Center"
+                             Spacing="48">
+                    <cv:IconLabelButton x:Name="TakePhotoIcon"
+                                        BindingContext="{Binding TakePhotoButtonViewModel}" />
+                    <Label FormattedText="{Binding WelcomeText}"
+                           HorizontalTextAlignment="Center" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

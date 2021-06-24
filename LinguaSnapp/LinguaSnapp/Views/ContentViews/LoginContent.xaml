@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             x:Class="LinguaSnapp.Views.ContentViews.LoginContent">
+  <ContentView.Content>
+        <ScrollView VerticalOptions="Center">
+            <StackLayout x:Name="MainStack">
+                <cv:IconLabelButton BindingContext="{Binding AboutButtonViewModel}" />
+                <Label HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="{StaticResource login_1}" />
+                                <Span Text=" " />
+                                <Span Text="{StaticResource login_2}"
+                                      Style="{StaticResource span_weblink}">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding RegisterLinkTapped}" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                                <Span Text=" " />
+                                <Span Text="{StaticResource login_3}" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <cv:EntryWithIcon BindingContext="{Binding UserCodeViewModel}"/>
+                <cv:EntryWithIcon BindingContext="{Binding PasswordViewModel}"/>
+                <cv:InfoButtonBar />
+                <Label HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="{StaticResource login_warning}"
+                                      FontAttributes="Bold"
+                                      TextColor="{StaticResource PrimaryLightBackground}" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button Text="{StaticResource login_button}"
+                        Command="{Binding LoginButtonTapped}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

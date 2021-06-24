@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:vm="clr-namespace:LinguaSnapp.ViewModels.Popups"
+                 xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+                 x:Class="LinguaSnapp.Views.Popups.AddTranslationPopup"
+                 Visual="Material">
+    <pages:PopupPage.BindingContext>
+        <vm:AddTranslationPopupViewModel x:Name="PageViewModel" />
+    </pages:PopupPage.BindingContext>
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation PositionIn="Center"
+                                   PositionOut="Center"
+                                   ScaleIn="1.2"
+                                   ScaleOut="0.8"
+                                   DurationIn="200"
+                                   DurationOut="200"
+                                   EasingIn="SinOut"
+                                   EasingOut="SinIn"
+                                   HasBackgroundAnimation="True" />
+    </pages:PopupPage.Animation>
+    <pages:PopupPage.Content>
+        <ScrollView Margin="10"
+                    VerticalOptions="Center"
+                    BackgroundColor="GhostWhite">
+            <StackLayout>
+                <Label Text="{StaticResource lang_pop_title}"
+                       FontSize="Large"
+                       TextColor="{StaticResource PrimaryLightBackground}"
+                       HorizontalTextAlignment="Center" />
+                <cv:PickerView BindingContext="{Binding LanguagePickerViewModel}" />
+                <cv:EntryView BindingContext="{Binding OtherLanguageViewModel}"
+                              IsVisible="{Binding LanguagePickerViewModel.OtherVisible, Source={x:Reference PageViewModel}}" />
+                <cv:PickerView BindingContext="{Binding AlphabetPickerViewModel}" />
+                <cv:EntryView BindingContext="{Binding OtherAlphabetViewModel}"
+                              IsVisible="{Binding AlphabetPickerViewModel.OtherVisible, Source={x:Reference PageViewModel}}" />
+                <cv:EditorView BindingContext="{Binding TranslationViewModel}" />
+                <Button Text="{StaticResource lang_pop_cancel}"
+                        Command="{Binding CancelTapped}" />
+                <Button Text="{StaticResource lang_pop_add}"
+                        Command="{Binding AddTapped}" />
+            </StackLayout>
+        </ScrollView>
+    </pages:PopupPage.Content>
+</pages:PopupPage>

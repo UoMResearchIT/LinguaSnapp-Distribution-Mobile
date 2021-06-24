@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             x:Class="LinguaSnapp.Views.ContentViews.RegisterContent">
+  <ContentView.Content>
+        <ScrollView VerticalOptions="Center">
+            <StackLayout x:Name="MainStack">
+                <cv:IconLabelButton BindingContext="{Binding AboutButtonViewModel}" />
+                <Label HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="{StaticResource register_1}" />
+                                <Span Text=" " />
+                                <Span Text="{StaticResource register_2}"
+                                      Style="{StaticResource span_weblink}">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding LoginLinkTapped}" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                                <Span Text=" " />
+                                <Span Text="{StaticResource register_3}" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <cv:EntryWithIcon BindingContext="{Binding UserCodeViewModel}" />
+                <cv:EntryWithIcon BindingContext="{Binding PasswordViewModel}" />
+                <cv:EntryWithIcon BindingContext="{Binding ConfirmPasswordViewModel}" />
+                <Label HorizontalTextAlignment="Center"
+                       Text="{StaticResource register_4}" />
+                <cv:EntryWithIcon BindingContext="{Binding EmailViewModel}" />
+                <Grid ColumnDefinitions="Auto, Auto"
+                      HorizontalOptions="Center">
+                    <CheckBox IsChecked="{Binding JoinMailingList}"
+                              VerticalOptions="Center"
+                              Color="{StaticResource PrimaryLightBackground}" />
+                    <Label Grid.Column="1"
+                           HorizontalTextAlignment="Start"
+                           VerticalTextAlignment="Center"
+                           Text="{StaticResource register_join}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding MailingListTapped}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <cv:InfoButtonBar />
+                <Label HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="{StaticResource login_warning}"
+                                      FontAttributes="Bold"
+                                      TextColor="{StaticResource PrimaryLightBackground}" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button Text="{StaticResource register_button}"
+                        Command="{Binding RegisterButtonTapped}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             xmlns:cn="clr-namespace:LinguaSnapp.Converters"
+             xmlns:ctrl="clr-namespace:LinguaSnapp.Controls"
+             x:Class="LinguaSnapp.Views.ContentViews.PickerView">
+    <ContentView.Resources>
+        <cn:BoolInverter x:Key="boolInv" />
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid ColumnDefinitions="*, Auto, Auto"
+              ColumnSpacing="0">
+            <ctrl:PickerWithValidity ItemsSource="{Binding ItemsSource}"
+                                     SelectedItem="{Binding SelectedItem}"
+                                     Title="{Binding Placeholder}"
+                                     VerticalOptions="Center"
+                                     IsEnabled="{Binding IsReadOnly, Converter={StaticResource boolInv}}"
+                                     IsValid="{Binding IsValid}"
+                                     CheckHasValue="{Binding CheckHasValue}"
+                                     AutomationProperties.IsInAccessibleTree="True"
+                                     AutomationProperties.Name="{Binding Placeholder}" />
+            <cv:IconLabelButton BindingContext="{Binding ClearButtonViewModel}"
+                                Grid.Column="1" />
+            <cv:IconLabelButton BindingContext="{Binding ToolTipButtonViewModel}"
+                                Grid.Column="2" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

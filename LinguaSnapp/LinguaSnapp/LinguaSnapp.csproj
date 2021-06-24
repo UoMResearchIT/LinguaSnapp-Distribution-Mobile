@@ -1,0 +1,167 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <Configurations>Example-Debug;Example-Release;</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Example-Debug|AnyCPU'">
+    <DebugType></DebugType>
+    <DefineConstants>DEBUG;TRACE;LINGUASNAPP_DEBUG;NETSTANDARD;NETSTANDARD2_0;LS</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Example-Release|AnyCPU' ">
+    <DebugType></DebugType>
+    <DefineConstants>TRACE;LINGUASNAPP_RELEASE;NETSTANDARD;NETSTANDARD2_0;LS</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\OpenSans_Regular.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans_SemiBold.ttf" />
+  </ItemGroup>
+
+  <!-- Customisations -->
+  <ItemGroup Condition="'$(Configuration)'=='Example-Debug' OR '$(Configuration)'=='Example-Release'">
+    <EmbeddedResource Remove="..\..\Customisations\**\about.html" />
+	<EmbeddedResource Remove="..\..\Customisations\**\accessibility.html" />
+	<EmbeddedResource Remove="..\..\Customisations\**\descriptorValues.txt" />
+	<EmbeddedResource Remove="..\..\Customisations\**\endpoints.txt" />
+	<EmbeddedResource Remove="..\..\Customisations\**\tooltips.txt" />
+	<EmbeddedResource Remove="..\..\Customisations\**\dataprotection.html" />
+	<EmbeddedResource Remove="..\..\Customisations\**\AppResources.xaml" />
+	<Compile Remove="..\..\Customisations\**\AppResources.xaml.cs" />
+	
+    <EmbeddedResource Include="..\..\Customisations\Example\about.html">
+      <Link>Resources\about.html</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Customisations\Example\accessibility.html">
+      <Link>Resources\accessibility.html</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Customisations\Example\descriptorValues.txt">
+      <Link>Resources\descriptorValues.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Customisations\Example\endpoints.txt">
+      <Link>Resources\endpoints.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Customisations\Example\tooltips.txt">
+      <Link>Resources\tooltips.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Customisations\Example\dataprotection.html">
+      <Link>Resources\dataprotection.html</Link>
+    </EmbeddedResource>
+	<EmbeddedResource Include="..\..\Customisations\Example\AppResources.xaml">
+	  <Link>Resources\AppResources.xaml</Link>
+	  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <Compile Include="..\..\Customisations\Example\AppResources.xaml.cs">
+	  <Link>Resources\AppResources.xaml.cs</Link>
+      <DependentUpon>AppResources.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- End Customisations -->
+
+  <ItemGroup>
+    <PackageReference Include="ByteSize" Version="2.0.0" />
+    <PackageReference Include="DotNetExtensions" Version="1.2.0" />
+    <PackageReference Include="MDS.Essentials" Version="1.6.0" />
+    <PackageReference Include="PdfSharp.Xamarin.Forms" Version="1.0.0" />
+    <PackageReference Include="SkiaSharp" Version="2.80.2" />
+    <PackageReference Include="SqlBaseLibrary" Version="1.2.1" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.1.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1.2606" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.2012" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AppShellEditor.xaml.cs">
+      <DependentUpon>AppShellEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="AppShellHome.xaml.cs">
+      <DependentUpon>AppShellHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ContentViews\EntryView.xaml.cs">
+      <DependentUpon>EntryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ContentViews\EditorView.xaml.cs">
+      <DependentUpon>EditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ContentViews\MultiPickerView.xaml.cs">
+      <DependentUpon>MultiPickerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ContentViews\PickerView.xaml.cs">
+      <DependentUpon>PickerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ModalContainer.xaml.cs">
+      <DependentUpon>ModalContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\InfoContentPopup.xaml.cs">
+      <DependentUpon>InfoContentPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\ToolTipPopup.xaml.cs">
+      <DependentUpon>ToolTipPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\MultiPickPopup.xaml.cs">
+      <DependentUpon>MultiPickPopup.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\AnalysisPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ContentViews\Acknowledgement.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AboutPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ContentViews\DynamicHeader.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ContentViews\EditorButtonBar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ContentViews\EntryWithIcon.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ContentViews\PickerView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ContentViews\IconLabelButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ContentViews\InfoButtonBar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ContentViews\InfoContent.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ContentViews\LoginContent.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ContentViews\RegisterContent.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ContentViews\SubmissionCard.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ContentViews\TranslationCard.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ContextPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LanguagePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\AddTranslationPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\UploadsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

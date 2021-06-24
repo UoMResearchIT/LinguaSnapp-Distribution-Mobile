@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB"
+		  version="3.0"
+		  toolsVersion="6245"
+		  systemVersion="13F34"
+		  targetRuntime="iOS.CocoaTouch"
+		  propertyAccessControl="none"
+		  useAutolayout="YES"
+		  useTraitCollections="YES"
+		  initialViewController="X5k-f2-b5h">
+	<dependencies>
+		<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+				version="6238" />
+	</dependencies>
+	<scenes>
+		<!--View Controller-->
+		<scene sceneID="gAE-YM-kbH">
+			<objects>
+				<viewController id="X5k-f2-b5h"
+								sceneMemberID="viewController">
+					<layoutGuides>
+						<viewControllerLayoutGuide type="top"
+												   id="Y8P-hJ-Z43" />
+						<viewControllerLayoutGuide type="bottom"
+												   id="9ZL-r4-8FZ" />
+					</layoutGuides>
+					<view contentMode="scaleToFill"
+						  id="267"
+						  key="view">
+						<rect key="frame"
+							  x="0.0"
+							  y="0.0"
+							  width="414"
+							  height="736" />
+					    <!-- Customisation -->
+						<color key="backgroundColor"
+							   colorSpace="calibratedRGB"
+							   red="0.086"
+							   green="0.722"
+							   blue="0.149"
+							   alpha="1" />
+					    <!-- End Customisation -->
+						<subviews>
+							<imageView clipsSubviews="YES"
+									   userInteractionEnabled="NO"
+									   contentMode="scaleAspectFit"
+									   horizontalHuggingPriority="251"
+									   verticalHuggingPriority="251"
+									   id="268"
+									   translatesAutoresizingMaskIntoConstraints="NO"
+									   image="LaunchScreenIcon">
+								<!-- Customisation -->
+								<color key="tintColor"
+									   colorSpace="calibratedRGB"
+									   red="1"
+									   green="1"
+									   blue="1"
+									   alpha="1" />
+								<!-- End Customisation -->
+								<rect key="frame"
+									  x="117"
+									  y="278"
+									  width="180"
+									  height="180" />
+								<constraints>
+									<constraint id="287"
+												firstAttribute="width"
+												constant="180" />
+									<constraint id="289"
+												firstAttribute="height"
+												constant="180" />
+								</constraints>
+							</imageView>
+						</subviews>
+						<constraints>
+							<constraint id="292"
+										firstItem="268"
+										firstAttribute="centerX"
+										secondItem="267"
+										secondAttribute="centerX" />
+							<constraint id="293"
+										firstItem="268"
+										firstAttribute="centerY"
+										secondItem="267"
+										secondAttribute="centerY" />
+						</constraints>
+					</view>
+				</viewController>
+				<placeholder placeholderIdentifier="IBFirstResponder"
+							 id="XAI-xm-WK6"
+							 userLabel="First Responder"
+							 sceneMemberID="firstResponder" />
+			</objects>
+			<point key="canvasLocation"
+				   x="349"
+				   y="339" />
+		</scene>
+	</scenes>
+	<resources>
+		<image name="LaunchScreenIcon"
+			   width="180"
+			   height="180" />
+	</resources>
+</document>

@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="LinguaSnapp.Resources.AppResources">
+
+    <!-- Colours -->
+    <Color x:Key="Primary">#16b826</Color>
+    <Color x:Key="Secondary">White</Color>
+    <Color x:Key="PrimaryLightBackground">#16b826</Color>
+    <Color x:Key="Tertiary">#e4ede4</Color>
+    <Color x:Key="Error">#EF6060</Color>
+    <Color x:Key="Unselected">Gray</Color>
+
+    <!-- Alerts -->
+    <x:String x:Key="alert_error">Oops!</x:String>
+    <x:String x:Key="alert_really">Really?</x:String>
+    <x:String x:Key="alert_retry">Retry</x:String>
+    <x:String x:Key="alert_cancel">Cancel</x:String>
+    <x:String x:Key="alert_ok">OK</x:String>
+    <x:String x:Key="alert_yes">Yes</x:String>
+    <x:String x:Key="alert_delete">Delete</x:String>
+    <x:String x:Key="alert_no">No</x:String>
+    <x:String x:Key="alert_no_internet">You do not appear to have an internet connection. Please try again later.</x:String>
+    <x:String x:Key="alert_delete_body">Do you really want to delete this submission? This cannot be undone!</x:String>
+    <x:String x:Key="alert_upload_all_body">Do you want to upload or export all submissions in their current state?</x:String>
+    <x:String x:Key="alert_upload_all_invalid_title">Upload Incomplete</x:String>
+    <x:String x:Key="alert_upload_all_invalid_body">We uploaded what we could but there were some incomplete submissions which have not been sent.</x:String>
+    <x:String x:Key="alert_upload_invalid">Submission Incomplete</x:String>
+    <x:String x:Key="alert_upload_invalid_body">This submission is incomplete. You can save it and come back later but you cannot send it until you complete it.</x:String>
+    <x:String x:Key="alert_not_touched">You can add more information to your submission on the Context and Analysis tabs below. Do you really want to upload your submission as it is?</x:String>
+    <x:String x:Key="alert_upload_not_database">Submission Not Found</x:String>
+    <x:String x:Key="alert_upload_server">Server Error</x:String>
+    <x:String x:Key="alert_upload_unknown">Unknown Error</x:String>
+    <x:String x:Key="alert_upex_title">Upload or Export</x:String>
+    <x:String x:Key="alert_upload_export">Export</x:String>
+    <x:String x:Key="alert_upload_upload">Upload</x:String>
+    <x:String x:Key="alert_username_blank">Please specify a username.</x:String>
+    <x:String x:Key="alert_password_blank">Please specify a password.</x:String>
+    <x:String x:Key="alert_username_short">Your username is too short.</x:String>
+    <x:String x:Key="alert_password_short">Your password is too short.</x:String>
+    <x:String x:Key="alert_password_mismatch">Your passwords do not match.</x:String>
+    <x:String x:Key="alert_email_invalid">Your email address is invalid.</x:String>
+    <x:String x:Key="alert_no_gps_support">This device does not appear to support GPS location.</x:String>
+    <x:String x:Key="alert_no_gps_disabled">This device appears to have its GPS feature disabled.</x:String>
+    <x:String x:Key="alert_no_gps_permission">You have not given us permission to get your GPS location.</x:String>
+    <x:String x:Key="alert_no_gps_other">We cannot get your location right now.</x:String>
+    <x:String x:Key="alert_enter_location">Please enter your location in the comments field of the submission. You will not be able to upload your submission until you adding this information.</x:String>
+
+    <!-- Titles -->
+    <x:String x:Key="title_home">Home</x:String>
+    <x:String x:Key="title_uploads">Uploads</x:String>
+    <x:String x:Key="title_about">About</x:String>
+    <x:String x:Key="title_access">Accessibility Statement</x:String>
+    <x:String x:Key="title_data">Data Protection Statement</x:String>
+    <x:String x:Key="title_language">Language</x:String>
+    <x:String x:Key="title_context">Context</x:String>
+    <x:String x:Key="title_analysis">Analysis</x:String>
+
+    <!-- Info Bar -->
+    <x:String x:Key="info_access">Accessibility</x:String>
+    <x:String x:Key="info_data">Privacy</x:String>
+    <x:String x:Key="info_about">About the App</x:String>
+
+    <!-- Login View -->
+    <x:String x:Key="login_1">Please log into the LinguaSnapp server, or</x:String>
+    <x:String x:Key="login_2">register</x:String>
+    <x:String x:Key="login_3">if you do not have, or can't remember, your password.</x:String>
+    <x:String x:Key="login_usercode">Usercode (min 5 chars)</x:String>
+    <x:String x:Key="login_password">Password (min 5 chars)</x:String>
+    <x:String x:Key="login_button">Login</x:String>
+    <x:String x:Key="login_spinner">Logging in...</x:String>
+	<x:String x:Key="login_warning">Photos you submit are publicly visible on the LinguaSnapp website. Please ensure you have permission to take photos of private spaces and do not include people in your photos.</x:String>
+
+    <!-- Register View -->
+    <x:String x:Key="register_1">Please register with the LinguaSnapp server, or</x:String>
+    <x:String x:Key="register_2">log in</x:String>
+    <x:String x:Key="register_3">if you have already registered.</x:String>
+    <x:String x:Key="register_usercode">Choose a Usercode (min 5 chars)</x:String>
+    <x:String x:Key="register_password">Password (min 5 chars)</x:String>
+    <x:String x:Key="register_confirm">Confirm Password</x:String>
+    <x:String x:Key="register_button">Register</x:String>
+    <x:String x:Key="register_4">Your email address is optional and can be used by you to identify yourself, should you wish to. It will not be shared with others and will also allow you to receive messages on our mailing list if you want them. If you are a student and have been asked to use this app as part of your course unit then please enter your university email address to allows us to identify you for your group work.</x:String>
+    <x:String x:Key="register_email">Your Email Address</x:String>
+    <x:String x:Key="register_join">Join our mailing list?</x:String>
+    <x:String x:Key="register_about_button">About LinguaSnapp</x:String>
+    <x:String x:Key="register_spinner">Registering...</x:String>
+
+    <!-- Home Page -->
+    <x:String x:Key="welcome_1">Hello! So far you have uploaded</x:String>
+    <x:String x:Key="welcome_2">photo(s) to our servers!</x:String>
+    <x:String x:Key="welcome_take_photo">Take Photo</x:String>
+    <x:String x:Key="welcome_gps_spinner">Getting Location...</x:String>
+    <x:String x:Key="welcome_create_spinner">Creating Submission...</x:String>
+
+    <!-- Uploads Page -->
+    <x:String x:Key="uploads_edit">Edit</x:String>
+    <x:String x:Key="uploads_view">View</x:String>
+    <x:String x:Key="uploads_all">Upload All</x:String>
+    <x:String x:Key="uploads_none">You have no submissions at the moment!</x:String>
+    <x:String x:Key="upload_spinner">Processing...</x:String>
+    <x:String x:Key="upload_spinner_export">Exporting submissions as a PDF...</x:String>
+    <x:String x:Key="upload_share_title">Export PDF</x:String>
+    
+    <!-- PDF Export -->
+    <x:String x:Key="pdf_footer_1">Created with LinguaSnapp © The University of Manchester 2021.</x:String>
+    <x:String x:Key="pdf_footer_2">To reference LinguaSnapp: Matras, Y., Jerrison, A. and Harwood, A. (2021). LinguaSnapp (Version 2.X) [Mobile app]. The University of Manchester</x:String>
+    <x:String x:Key="pdf_latitude">Latitude</x:String>
+    <x:String x:Key="pdf_longitude">Longitude</x:String>
+    <x:String x:Key="pdf_translations">Current Languages, Alphabets or Translations</x:String>
+    <x:String x:Key="pdf_descriptors">Current Descriptors</x:String>
+
+    <!-- About Page -->
+    <x:String x:Key="info_pop_ok">OK</x:String>
+
+    <!-- Editor Bar -->
+    <x:String x:Key="editor_cancel">Cancel</x:String>
+    <x:String x:Key="editor_save">Save</x:String>
+    <x:String x:Key="editor_upload">Upload</x:String>
+    <x:String x:Key="editor_delete">Delete</x:String>
+
+    <!-- Language Page -->
+    <x:String x:Key="lang_title">Title</x:String>
+    <x:String x:Key="lang_num_lang">Number of Languages</x:String>
+    <x:String x:Key="lang_num_alpha">Number of Alphabets</x:String>
+    <x:String x:Key="lang_current">Current languages, alphabets or translations for this photo</x:String>
+    <x:String x:Key="lang_add">Add Suggestion</x:String>
+    <x:String x:Key="lang_no_items">Please suggest languages, alphabets or translations if you can</x:String>
+	<x:String x:Key="lang_detail">languages, alphabets or translations suggested</x:String>
+	<x:String x:Key="lang_no_detail">Suggestions will appear here</x:String>
+    <x:String x:Key="lang_card_lang">Language:</x:String>
+    <x:String x:Key="lang_card_alpha">Alphabets:</x:String>
+    <x:String x:Key="lang_card_trans">Translation:</x:String>
+    <x:String x:Key="lang_card_delete">Delete</x:String>
+    <x:String x:Key="lang_pop_title">Add Details</x:String>
+    <x:String x:Key="lang_pop_lang">Language</x:String>
+    <x:String x:Key="lang_pop_other_lang">Other Language</x:String>
+    <x:String x:Key="lang_pop_alpha">Alphabet</x:String>
+    <x:String x:Key="lang_pop_other_alpha">Other Alphabet</x:String>
+    <x:String x:Key="lang_pop_trans">Translation</x:String>
+    <x:String x:Key="lang_pop_add">Add</x:String>
+    <x:String x:Key="lang_pop_cancel">Cancel</x:String>
+    <x:String x:Key="lang_validation_fail">You must specify at least a language and alphabet.</x:String>
+
+    <!-- Context Page -->
+    <x:String x:Key="context_position">Position</x:String>
+    <x:String x:Key="context_sign_type">Sign Type</x:String>
+    <x:String x:Key="context_outlet">Outlet</x:String>
+    <x:String x:Key="context_outlet_other">Other Outlet</x:String>
+    <x:String x:Key="context_content">Content</x:String>
+    <x:String x:Key="context_design">Design</x:String>
+    <x:String x:Key="context_comments">Comments</x:String>
+
+    <!-- Multi Pick Popup -->
+    <x:String x:Key="multi_ok">OK</x:String>
+
+    <!-- Analysis Page -->
+    <x:String x:Key="analysis_sector">Sector</x:String>
+    <x:String x:Key="analysis_audience">Audience</x:String>
+    <x:String x:Key="analysis_purpose">Purpose</x:String>
+    <x:String x:Key="analysis_arrangement">Arrangement</x:String>
+    <x:String x:Key="analysis_function">Function</x:String>
+    <x:String x:Key="analysis_dominance_check">One Language Dominant?</x:String>
+    <x:String x:Key="analysis_dominance">Dominance</x:String>
+
+    <!-- Tooltip Popup -->
+    <x:String x:Key="tooltip_ok">OK</x:String>
+    <x:String x:Key="tooltip_help">Help</x:String>
+
+    <!-- Clear Button -->
+    <x:String x:Key="clear_button_label">Clear</x:String>
+
+    <!-- Validation -->
+    <x:String x:Key="validation_required">Required</x:String>
+    <x:String x:Key="validation_pos_int">Integer, >0</x:String>
+
+</ResourceDictionary>

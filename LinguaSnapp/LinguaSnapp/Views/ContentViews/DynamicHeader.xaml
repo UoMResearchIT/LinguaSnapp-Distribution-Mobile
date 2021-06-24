@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ve="clr-namespace:MDS.Essentials.Shared.ViewExtensions;assembly=MDS.Essentials"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="LinguaSnapp.Views.ContentViews.DynamicHeader">
+    <ContentView.Content>
+        <ve:FrameWithElevation CornerRadius="0"
+                               Padding="5"
+                               BackgroundColor="{StaticResource Primary}">
+            <Grid ColumnDefinitions="48,*,48"
+                  xct:SafeAreaEffect.SafeArea="false,true,false,false">
+                <Image Grid.Column="1"
+                       Source="ic_header_white"
+                       IsVisible="{Binding HeaderLogoVisible, FallbackValue=true}"
+                       xct:IconTintColorEffect.TintColor="{StaticResource Secondary}" />
+            </Grid>
+        </ve:FrameWithElevation>
+    </ContentView.Content>
+</ContentView>

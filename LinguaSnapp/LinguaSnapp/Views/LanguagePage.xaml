@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             xmlns:vm="clr-namespace:LinguaSnapp.ViewModels"
+             xmlns:conv="clr-namespace:LinguaSnapp.Converters"
+             xmlns:ve="clr-namespace:MDS.Essentials.Shared.ViewExtensions;assembly=MDS.Essentials"
+             xmlns:ctrl="clr-namespace:LinguaSnapp.Controls"
+             x:Class="LinguaSnapp.Views.LanguagePage"
+             Shell.NavBarIsVisible="False"
+             Visual="Material"
+             BackgroundColor="White">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:BoolInverter x:Key="inv" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <vm:LanguagePageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto, *"
+              RowSpacing="0">
+            <cv:EditorButtonBar />
+            <ScrollView Grid.Row="1">
+                <StackLayout VerticalOptions="Start"
+                             Margin="0">
+                    <Frame Padding="0"
+                           Margin="10"
+                           HorizontalOptions="Center">
+                        <Image Source="{Binding PreviewImage}"
+                               HeightRequest="256"
+                               Aspect="AspectFit"
+                               Margin="0" />
+                    </Frame>
+                    <cv:EntryView BindingContext="{Binding PhotoTitleViewModel}"
+                                  Margin="10, 0, 10, 0" />
+                    <cv:EntryView BindingContext="{Binding NumLangViewModel}"
+                                  Margin="10, 0, 10, 0" />
+                    <cv:EntryView BindingContext="{Binding NumAlphaViewModel}"
+                                  Margin="10, 0, 10, 0" />
+                    <Label Text="{StaticResource lang_current}"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Medium"
+                           Margin="10, 10, 10, 0" />
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Label FormattedText="{Binding DetailSummaryText}"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               IsVisible="{Binding IsCarouselEmpty, Converter={StaticResource inv}}"
+                               Margin="10, 0, 10, 0" />
+                        <Label Text="{StaticResource lang_no_items}"
+                               TextColor="Red"
+                               HorizontalTextAlignment="Center"
+                               VerticalOptions="Center"
+                               Margin="10, 0, 10, 0"
+                               IsVisible="{Binding IsCarouselEmpty}" />
+                        <cv:IconLabelButton BindingContext="{Binding AddTranslationButton}"
+                                            Margin="10, 0, 10, 0"
+                                            Grid.Column="1" />
+                    </Grid>
+                    <Grid Padding="0"
+                          Margin="0">
+                        <StackLayout Padding="0"
+                                     Margin="0">
+                            <CarouselView x:Name="TranslationCarousel"
+                                          ItemsSource="{Binding TranslationCardViewModels}"
+                                          VerticalOptions="Start"
+                                          IndicatorView="IndicatorView"
+                                          Loop="False"
+                                          PeekAreaInsets="50"
+                                          HeightRequest="300"
+                                          >
+                                <CarouselView.ItemTemplate>
+                                    <DataTemplate>
+                                        <cv:TranslationCard WidthRequest="{Binding Source={x:Reference TranslationCarousel}, Path=Width}"
+                                                            Margin="10"/>
+                                    </DataTemplate>
+                                </CarouselView.ItemTemplate>
+                            </CarouselView>
+                            <IndicatorView x:Name="IndicatorView"
+                                           IndicatorColor="{StaticResource uom_grey}"
+                                           SelectedIndicatorColor="{StaticResource Primary}"
+                                           HorizontalOptions="Center" />
+                        </StackLayout>
+                        <ve:FrameWithElevation BackgroundColor="{StaticResource Tertiary}"
+                                               WidthRequest="{Binding Source={x:Reference TranslationCarousel}, Path=Width}"
+                                               IsVisible="{Binding IsCarouselEmpty}"
+                                               Margin="10">
+                            <Label Text="{StaticResource lang_no_detail}"
+                                   VerticalOptions="Center"
+                                   HorizontalTextAlignment="Center" />
+                        </ve:FrameWithElevation>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

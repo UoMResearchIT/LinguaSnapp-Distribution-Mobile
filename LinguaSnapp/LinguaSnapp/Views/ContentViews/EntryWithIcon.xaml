@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:LinguaSnapp.Views.ContentViews"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="LinguaSnapp.Views.ContentViews.EntryWithIcon">
+    <ContentView.Content>
+        <Grid ColumnDefinitions="Auto, *, Auto, Auto"
+              ColumnSpacing="0">
+            <Image Source="{Binding IconSource}"
+                   Aspect="AspectFit"
+                   HeightRequest="48"
+                   xct:IconTintColorEffect.TintColor="{StaticResource PrimaryLightBackground}" />
+            <Entry Grid.Column="1"
+                   Text="{Binding EntryText}"
+                   Placeholder="{Binding Placeholder}"
+                   IsPassword="{Binding IsPassword}"
+                   Keyboard="{Binding Keyboard}" />
+            <cv:IconLabelButton Grid.Column="2"
+                                BindingContext="{Binding ClearButtonViewModel}" />
+            <Image Grid.Column="3"
+                   Source="{Binding StatusIconSource}"
+                   Aspect="AspectFit"
+                   HeightRequest="48" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>
