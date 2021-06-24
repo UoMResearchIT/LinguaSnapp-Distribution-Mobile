@@ -1,12 +1,9 @@
-﻿# LinguaSnapp Mobile 
+﻿# LinguaSnapp Mobile App Redistributable
 
-This is the code for the LinguaSnapp mobile application. This version is the one to use for distribution to other institutions. If you are looking for the 
-University of Manchester hosted versions (for Manchester, Jerusalem and Melbourne) then please go to Subversion at the following URL:
+This is the source code for the LinguaSnapp mobile application. This version can be dsitributed to other institutions as it has had all references to Manchester systems and dependencies removed. If you are looking for the University of Manchester hosted versions (for Manchester, Jerusalem and Melbourne) then the source code can be found in the [sister repository](https://github.com/UoMResearchIT/LinguaSnapp-Xamarin-Mobile).
 
-https://scm.manchester.ac.uk/svn/hum_research_develop 
+The legacy version of the app (v1.X) is a Javascript/jQuery Mobile application written for PhoneGap and to be compiled on PhoneGap Build.
 
-This is a Javascript/jQuery Mobile application written for PhoneGap and to be compiled on PhoneGap Build.
+The current version (v2.X) is written using Xamarin.Forms 5.0 and can be built using Visual Studio and the .NET stack.
 
-Installation and configuration documentation is in the Wiki. Any changes that require different instructions also need to be documented in the Word
-document that gets distributed with the package.
-
+Installation and configuration documentation is in [the Wiki](https://github.com/UoMResearchIT/LinguaSnapp-Distribution-Mobile/wiki).
